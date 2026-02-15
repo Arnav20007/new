@@ -2,24 +2,26 @@
 FinanceCalc — Flask Backend API
 Production-ready REST API structure for financial calculations
 """
-@app.route("/")
-def home():
-    return "FinanceCalc API running 🚀"
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
 
+# ─── App Initialization (MUST COME FIRST) ─────────────────────────────
 app = Flask(__name__)
 CORS(app)
 
 # Configuration
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://localhost:5432/financecalc')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///financecalc.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# ─── Root Route (Homepage) ───────────────────────────────────────────
+@app.route("/")
+def home():
+    return "FinanceCalc API running 🚀"
 
-# ─── Health Check ───────────────────────────────────────────────────────
+# ─── Health Check ─────────────────────────────────────────────────────
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({
@@ -28,8 +30,7 @@ def health_check():
         'service': 'FinanceCalc API'
     })
 
-
-# ─── Compound Interest ─────────────────────────────────────────────────
+# ─── Compound Interest ────────────────────────────────────────────────
 @app.route('/api/calculate/compound-interest', methods=['POST'])
 def compound_interest():
     data = request.json
@@ -47,7 +48,7 @@ def compound_interest():
 
         for year in range(1, years + 1):
             yearly_interest = 0
-            for month in range(1, 13):
+            for month in range(12):
                 interest = balance * monthly_rate
                 yearly_interest += interest
                 balance += interest + monthly
@@ -73,8 +74,7 @@ def compound_interest():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 
-
-# ─── Loan Payoff ───────────────────────────────────────────────────────
+# ─── Loan Payoff ─────────────────────────────────────────────────────
 @app.route('/api/calculate/loan-payoff', methods=['POST'])
 def loan_payoff():
     data = request.json
@@ -125,8 +125,7 @@ def loan_payoff():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 
-
-# ─── Retirement Calculator ────────────────────────────────────────────
+# ─── Retirement Calculator ───────────────────────────────────────────
 @app.route('/api/calculate/retirement', methods=['POST'])
 def retirement():
     data = request.json
@@ -149,7 +148,7 @@ def retirement():
 
         for year in range(1, years + 1):
             yearly_growth = 0
-            for month in range(1, 13):
+            for month in range(12):
                 interest = balance * monthly_rate
                 yearly_growth += interest
                 balance += interest + monthly_contribution
@@ -178,8 +177,7 @@ def retirement():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 
-
-# ─── Inflation Calculator ─────────────────────────────────────────────
+# ─── Inflation Calculator ────────────────────────────────────────────
 @app.route('/api/calculate/inflation', methods=['POST'])
 def inflation():
     data = request.json
@@ -218,7 +216,7 @@ def inflation():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 
-
+# ─── Run App ─────────────────────────────────────────────────────────
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
