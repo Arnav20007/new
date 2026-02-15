@@ -2,6 +2,9 @@
 FinanceCalc — Flask Backend API
 Production-ready REST API structure for financial calculations
 """
+@app.route("/")
+def home():
+    return "FinanceCalc API running 🚀"
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
