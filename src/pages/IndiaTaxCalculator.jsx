@@ -56,8 +56,8 @@ export default function IndiaTaxCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Income Tax Calculator India (FY 2024-25) | FinanceCalc"
-                description="Free India Income Tax calculator for New Regime FY 2024-25 (AY 2025-26). Calculate your tax liability, rebate, and take-home salary instantly."
+                title="India Income Tax Calculator 2024-25 & 2025-26 | FinanceCalc"
+                description="Calculate your tax liability under the New and Old Tax Regimes for FY 2024-25 (AY 2025-26) with our accurate India Tax Calculator."
                 canonical="/india-tax-calculator"
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>India Tax Calculator</span></nav>

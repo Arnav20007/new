@@ -21,6 +21,7 @@ const allTools = [
     { path: '/india-tax-calculator', label: 'India Tax' },
     { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff' },
     { path: '/gst-calculator', label: 'GST Calculator' },
+    { path: '/hra-calculator', label: 'HRA Calculator' },
 ];
 
 export default function Header() {

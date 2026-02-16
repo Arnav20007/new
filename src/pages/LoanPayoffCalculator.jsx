@@ -144,7 +144,7 @@ export default function LoanPayoffCalculator() {
 
     return (
         <div className="calculator-page">
-            <SEOHead title="Loan Payoff & Amortization Calculator | FinanceCalc" description="Calculate your loan payoff timeline with a complete amortization schedule and see how extra payments can save you thousands in interest." canonical="/loan-payoff-calculator" faqSchema={faqs} />
+            <SEOHead title="Loan Payoff & Amortization Calculator India | FinanceCalc" description="Calculate your loan payoff timeline with a complete amortization schedule and see how extra payments save you money on interest. Built for Indian borrowers." canonical="/loan-payoff-calculator" faqSchema={faqs} />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Loan Payoff Calculator</span></nav>
 
             <section className="calculator-hero">

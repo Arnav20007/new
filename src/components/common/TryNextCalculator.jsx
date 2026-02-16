@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const allCalculators = [
-    { path: '/compound-interest-calculator', name: 'Compound Interest Calculator', desc: 'See how your money grows over time with compound interest.' },
-    { path: '/loan-payoff-calculator', name: 'Loan Payoff Calculator', desc: 'Visualize your amortization schedule and total interest.' },
-    { path: '/retirement-calculator', name: 'Retirement Calculator', desc: 'Estimate your retirement savings and withdrawal income.' },
-    { path: '/inflation-calculator', name: 'Inflation Calculator', desc: 'Understand how inflation erodes your purchasing power.' },
-    { path: '/debt-snowball-calculator', name: 'Debt Snowball Calculator', desc: 'Find the fastest way to eliminate your debts.' },
+    { path: '/sip-calculator', name: 'SIP Calculator India', desc: 'Estimate future wealth from your mutual fund SIP.' },
+    { path: '/emi-calculator', name: 'EMI Calculator India', desc: 'Calculate monthly payments for Home or Car loans.' },
+    { path: '/india-tax-calculator', name: 'India Tax Calculator', desc: 'Compare New vs Old tax regimes for 2024-25.' },
+    { path: '/hra-calculator', name: 'HRA Calculator India', desc: 'Calculate your house rent tax exemption.' },
+    { path: '/gst-calculator', name: 'GST Calculator India', desc: 'Quickly calculate GST inclusive and exclusive prices.' },
 ];
 
 /**

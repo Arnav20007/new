@@ -69,8 +69,8 @@ export default function SIPCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="SIP Calculator — Mutual Fund SIP Returns | FinanceCalc"
-                description="Estimate the future value of your Systematic Investment Plan (SIP) in mutual funds with our free tool. Includes charts and yearly breakdown."
+                title="SIP Calculator India – Mutual Fund Growth | FinanceCalc"
+                description="Estimate the future value of your Systematic Investment Plan (SIP) in mutual funds in India. Secure and accurate SIP planning."
                 canonical="/sip-calculator"
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>SIP Calculator</span></nav>

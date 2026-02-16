@@ -60,8 +60,8 @@ export default function GSTCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="GST Calculator Online — Calculate GST Inclusive & Exclusive | FinanceCalc"
-                description="Free GST calculator for India. Easily calculate GST inclusive and exclusive amounts with CGST and SGST breakdown for 5%, 12%, 18% and 28% slabs."
+                title="GST Calculator India – Inclusive & Exclusive | FinanceCalc"
+                description="Free GST calculator for India. Calculate GST inclusive and exclusive amounts with CGST and SGST breakdown for 5%, 12%, 18% and 28% slabs."
                 canonical="/gst-calculator"
                 faqSchema={faqs}
             />

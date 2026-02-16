@@ -17,6 +17,9 @@ const EMICalculator = lazy(() => import('./pages/EMICalculator'));
 const IndiaTaxCalculator = lazy(() => import('./pages/IndiaTaxCalculator'));
 const CreditCardPayoffCalculator = lazy(() => import('./pages/CreditCardPayoffCalculator'));
 const GSTCalculator = lazy(() => import('./pages/GSTCalculator'));
+const HRACalculator = lazy(() => import('./pages/HRACalculator'));
+const IncomeTaxGuide = lazy(() => import('./pages/guides/IncomeTaxGuide'));
+const SIPvsFDGuide = lazy(() => import('./pages/guides/SIPvsFDGuide'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
@@ -59,6 +62,9 @@ export default function App() {
                   <Route path="/india-tax-calculator" element={<IndiaTaxCalculator />} />
                   <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
                   <Route path="/gst-calculator" element={<GSTCalculator />} />
+                  <Route path="/hra-calculator" element={<HRACalculator />} />
+                  <Route path="/guides/how-to-calculate-income-tax-india" element={<IncomeTaxGuide />} />
+                  <Route path="/guides/sip-vs-fd-which-is-better" element={<SIPvsFDGuide />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                   <Route path="/disclaimer" element={<Disclaimer />} />

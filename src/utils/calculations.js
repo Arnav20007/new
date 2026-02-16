@@ -519,3 +519,32 @@ export function calculateGST(amount, rate, inclusive = false) {
     };
 }
 
+/**
+ * HRA (House Rent Allowance) Calculator (India)
+ * @param {number} basicSalary - Monthly basic salary
+ * @param {number} da - Monthly Dearness Allowance
+ * @param {number} hraReceived - Monthly HRA received
+ * @param {number} rentPaid - Monthly rent paid
+ * @param {boolean} isMetro - Living in a metro city (50% vs 40%)
+ * @returns {Object} Tax-exempt HRA and taxable portion
+ */
+export function calculateHRA(basicSalary, da, hraReceived, rentPaid, isMetro) {
+    const salary = basicSalary + da;
+    const rentExcess = Math.max(0, rentPaid - (salary * 0.1));
+    const percentage = isMetro ? 0.5 : 0.4;
+    const salaryLimit = salary * percentage;
+
+    // Minimum of three conditions
+    const exemptMonthly = Math.min(hraReceived, rentExcess, salaryLimit);
+    const taxableMonthly = hraReceived - exemptMonthly;
+
+    return {
+        monthlyExempt: Math.round(exemptMonthly),
+        monthlyTaxable: Math.round(taxableMonthly),
+        annualExempt: Math.round(exemptMonthly * 12),
+        annualTaxable: Math.round(taxableMonthly * 12),
+        hraReceivedAnnual: Math.round(hraReceived * 12)
+    };
+}
+
+

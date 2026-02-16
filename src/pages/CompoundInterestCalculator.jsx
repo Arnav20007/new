@@ -179,8 +179,8 @@ export default function CompoundInterestCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Compound Interest Calculator — Plan Your Savings | FinanceCalc"
-                description="Calculate compound interest with monthly contributions. See annual breakdowns, total returns, and chart projections. Free, accurate, and instantly downloadable."
+                title="Compound Interest Calculator India – Wealth Projection | FinanceCalc"
+                description="Calculate compound interest with monthly contributions. See annual breakdowns, total returns, and interactive charts for Indian investors."
                 canonical="/compound-interest-calculator"
                 faqSchema={faqs}
             />

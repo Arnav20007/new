@@ -66,8 +66,8 @@ export default function CreditCardPayoffCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Credit Card Payoff Calculator — Debt Free Plan | FinanceCalc"
-                description="Plan your path to zero balance and see how much interest you can save by optimizing your monthly payments. Escape the high-interest cycle today."
+                title="Credit Card Payoff Calculator India | FinanceCalc"
+                description="Plan your path to a zero balance and save on interest. Analyze your credit card debt payoff strategy with our accurate Indian finance tool."
                 canonical="/credit-card-payoff-calculator"
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Credit Card Payoff Calculator</span></nav>
