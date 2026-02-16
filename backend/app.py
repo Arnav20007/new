@@ -7,6 +7,7 @@ from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import os
 
+# ✅ Create Flask app FIRST (prevents NameError)
 app = Flask(__name__)
 CORS(app)
 
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRONTEND_FOLDER = os.path.join(BASE_DIR, "dist")
 
 
-# ─── Health Check ───────────────────────────────────────────────────────
+# ─── Health Check ─────────────────────────────────────────────────────
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({
@@ -30,7 +31,7 @@ def health_check():
     })
 
 
-# ─── Compound Interest ─────────────────────────────────────────────────
+# ─── Compound Interest ────────────────────────────────────────────────
 @app.route('/api/calculate/compound-interest', methods=['POST'])
 def compound_interest():
     data = request.json
@@ -75,7 +76,7 @@ def compound_interest():
         return jsonify({'success': False, 'error': str(e)}), 400
 
 
-# ─── Loan Payoff ───────────────────────────────────────────────────────
+# ─── Loan Payoff ──────────────────────────────────────────────────────
 @app.route('/api/calculate/loan-payoff', methods=['POST'])
 def loan_payoff():
     data = request.json
@@ -220,17 +221,17 @@ def inflation():
         return jsonify({'success': False, 'error': str(e)}), 400
 
 
-# ─── Serve React Frontend (FINAL & CORRECT) ───────────────────────────
+# ─── Serve React Frontend (FINAL FIX) ─────────────────────────────────
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def serve_react(path):
     full_path = os.path.join(FRONTEND_FOLDER, path)
 
-    # Serve static files if they exist
+    # Serve static files (JS, CSS, images)
     if path and os.path.isfile(full_path):
         return send_from_directory(FRONTEND_FOLDER, path)
 
-    # Otherwise serve React app
+    # Serve React app
     return send_from_directory(FRONTEND_FOLDER, "index.html")
 
 
