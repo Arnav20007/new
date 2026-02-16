@@ -67,8 +67,8 @@ export default function EMICalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="EMI Calculator — Calculate Home, Personal & Car Loan EMI"
-                description="Use our free EMI calculator to find your monthly loan payments, total interest, and complete repayment schedule."
+                title="EMI Calculator — Home, Car & Personal Loan | FinanceCalc"
+                description="Use our free EMI calculator to find your monthly loan payments, total interest, and complete repayment schedule. Supports home, car, and personal loans."
                 canonical="/emi-calculator"
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>EMI Calculator</span></nav>

@@ -6,14 +6,25 @@ import CurrencySelector from '../common/CurrencySelector';
 const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/compound-interest-calculator', label: 'Compound Interest' },
+    { path: '/emi-calculator', label: 'EMI Calculator' },
+    { path: '/india-tax-calculator', label: 'India Tax' },
+];
+
+const allTools = [
+    { path: '/compound-interest-calculator', label: 'Compound Interest' },
     { path: '/loan-payoff-calculator', label: 'Loan Payoff' },
     { path: '/retirement-calculator', label: 'Retirement' },
     { path: '/inflation-calculator', label: 'Inflation' },
     { path: '/debt-snowball-calculator', label: 'Debt Payoff' },
+    { path: '/sip-calculator', label: 'SIP Calculator' },
+    { path: '/emi-calculator', label: 'EMI Calculator' },
+    { path: '/india-tax-calculator', label: 'India Tax' },
+    { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff' },
 ];
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [toolsOpen, setToolsOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -26,12 +37,27 @@ export default function Header() {
                     </Link>
 
                     <nav className="header-nav">
-                        {navLinks.map(link => (
-                            <NavLink key={link.path} to={link.path} end={link.path === '/'}
-                                className={({ isActive }) => isActive ? 'active' : ''}>
-                                {link.label}
-                            </NavLink>
-                        ))}
+                        <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+
+                        <div className={`tools-dropdown ${toolsOpen ? 'open' : ''}`}
+                            onMouseEnter={() => setToolsOpen(true)}
+                            onMouseLeave={() => setToolsOpen(false)}>
+                            <button className="dropdown-trigger" type="button">
+                                Tools
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6,9 12,15 18,9" /></svg>
+                            </button>
+                            <div className="dropdown-menu">
+                                {allTools.map(tool => (
+                                    <Link key={tool.path} to={tool.path} onClick={() => setToolsOpen(false)}>
+                                        {tool.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <NavLink to="/compound-interest-calculator" className={({ isActive }) => isActive ? 'active' : ''}>Compound</NavLink>
+                        <NavLink to="/emi-calculator" className={({ isActive }) => isActive ? 'active' : ''}>EMI</NavLink>
+                        <NavLink to="/india-tax-calculator" className={({ isActive }) => isActive ? 'active' : ''}>Tax</NavLink>
                     </nav>
 
                     <div className="header-actions">
@@ -105,11 +131,13 @@ export default function Header() {
                     </div>
 
                     <nav className="mobile-nav-links">
-                        {navLinks.map(link => (
-                            <NavLink key={link.path} to={link.path} end={link.path === '/'}
+                        <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setMobileOpen(false)}>Home</NavLink>
+                        <div style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>All Calculators</div>
+                        {allTools.map(tool => (
+                            <NavLink key={tool.path} to={tool.path}
                                 className={({ isActive }) => isActive ? 'active' : ''}
                                 onClick={() => setMobileOpen(false)}>
-                                {link.label}
+                                {tool.label}
                             </NavLink>
                         ))}
                     </nav>

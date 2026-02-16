@@ -120,7 +120,7 @@ export default function InflationCalculator() {
 
     return (
         <div className="calculator-page">
-            <SEOHead title="Inflation Calculator — Purchasing Power Analysis" description="See how inflation erodes your purchasing power over time." canonical="/inflation-calculator" faqSchema={faqs} />
+            <SEOHead title="Inflation Calculator — Purchasing Power Loss | FinanceCalc" description="Understand how inflation erodes your purchasing power and see how much your money will be worth in the future with our free professional inflation tool." canonical="/inflation-calculator" faqSchema={faqs} />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Inflation Calculator</span></nav>
             <section className="calculator-hero"><h1>Inflation Calculator</h1><p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan accordingly.</p></section>
 

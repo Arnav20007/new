@@ -179,7 +179,7 @@ export default function CompoundInterestCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Compound Interest Calculator — Free Investment Growth Tool"
+                title="Compound Interest Calculator — Plan Your Savings | FinanceCalc"
                 description="Calculate compound interest with monthly contributions. See annual breakdowns, total returns, and chart projections. Free, accurate, and instantly downloadable."
                 canonical="/compound-interest-calculator"
                 faqSchema={faqs}

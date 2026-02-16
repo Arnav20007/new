@@ -59,7 +59,7 @@ export default function ValidatedInput({
                     onPaste={handlePaste}
                     min={min}
                     max={max}
-                    step={step}
+                    step={step || 'any'}
                     required={required}
                     disabled={disabled}
                     autoComplete="off"

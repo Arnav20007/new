@@ -144,7 +144,7 @@ export default function DebtSnowballCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Debt Snowball Calculator — Optimize Your Debt Payoff Strategy"
+                title="Debt Snowball & Avalanche Calculator | FinanceCalc"
                 description="Compare snowball vs. avalanche debt payoff methods. See how much interest you can save, get an optimized payoff order, and become debt-free faster."
                 canonical="/debt-snowball-calculator"
                 faqSchema={faqs}
