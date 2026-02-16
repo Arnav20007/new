@@ -211,10 +211,11 @@ def inflation():
             'success': True,
             'data': {
                 'currentValue': current_value,
-                'futureEquivalent': round(final_future, 2),
-                'futurePurchasingPower': round(final_pp, 2),
+                'futureValue': round(final_future, 2),
+                'purchasingPower': round(final_pp, 2),
+                'valueEroded': round(current_value - final_pp, 2),
                 'totalInflation': round(((1 + rate) ** years - 1) * 100, 2),
-                'breakdown': breakdown,
+                'yearlyData': breakdown,
             }
         })
     except Exception as e:

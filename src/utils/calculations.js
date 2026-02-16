@@ -170,7 +170,7 @@ export function calculateRetirement(currentAge, retirementAge, currentSavings, m
  * @returns {Object} Inflation-adjusted projections
  */
 export function calculateInflation(currentValue, years, inflationRate) {
-    const breakdown = [];
+    const yearlyData = [];
     const rate = inflationRate / 100;
 
     for (let year = 1; year <= years; year++) {
@@ -178,7 +178,7 @@ export function calculateInflation(currentValue, years, inflationRate) {
         const purchasingPower = currentValue / Math.pow(1 + rate, year);
         const valueEroded = currentValue - purchasingPower;
 
-        breakdown.push({
+        yearlyData.push({
             year,
             futureValue: Math.round(futureValue * 100) / 100,
             purchasingPower: Math.round(purchasingPower * 100) / 100,
@@ -192,10 +192,11 @@ export function calculateInflation(currentValue, years, inflationRate) {
 
     return {
         currentValue,
-        futureEquivalent: Math.round(finalFutureValue * 100) / 100,
-        futurePurchasingPower: Math.round(finalPurchasingPower * 100) / 100,
+        futureValue: Math.round(finalFutureValue * 100) / 100,
+        purchasingPower: Math.round(finalPurchasingPower * 100) / 100,
+        valueEroded: Math.round((currentValue - finalPurchasingPower) * 100) / 100,
         totalInflation: Math.round((Math.pow(1 + rate, years) - 1) * 10000) / 100,
-        breakdown,
+        yearlyData,
     };
 }
 
