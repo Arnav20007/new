@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://financecalc.com/sitemap.xml
+Sitemap: https://financecalc1.pythonanywhere.com/sitemap.xml
