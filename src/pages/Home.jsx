@@ -66,6 +66,13 @@ const calculators = [
         tags: ['Debt', 'Credit Card', 'Finance'],
         image: '/images/calc-cc.svg',
     },
+    {
+        icon: '💼', title: 'GST Calculator',
+        description: 'Calculate GST inclusive and exclusive amounts for goods and services in India.',
+        path: '/gst-calculator',
+        tags: ['Business', 'Tax', 'GST'],
+        image: '/images/calc-gst.svg',
+    },
 ];
 
 export default function Home() {

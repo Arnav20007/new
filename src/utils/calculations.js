@@ -481,3 +481,41 @@ export function calculateIndiaTax(annualIncome) {
 export function calculateCreditCardPayoff(balance, rate, monthlyPayment) {
     return calculateLoanPayoff(balance, rate, monthlyPayment); // Reuses loan logic as it's identical math
 }
+
+/**
+ * GST (Goods and Services Tax) Calculator
+ * @param {number} amount - Original cost or net price
+ * @param {number} rate - GST rate (%)
+ * @param {boolean} inclusive - Whether the amount is GST inclusive
+ * @returns {Object} GST amount and total price
+ */
+export function calculateGST(amount, rate, inclusive = false) {
+    let gstAmount, netAmount, totalAmount;
+
+    if (inclusive) {
+        // GST = Total Amount - [Total Amount / (1 + Rate/100)]
+        netAmount = amount / (1 + rate / 100);
+        gstAmount = amount - netAmount;
+        totalAmount = amount;
+    } else {
+        // GST = Amount * (Rate/100)
+        gstAmount = amount * (rate / 100);
+        netAmount = amount;
+        totalAmount = amount + gstAmount;
+    }
+
+    const cgst = gstAmount / 2;
+    const sgst = gstAmount / 2;
+
+    return {
+        amount,
+        rate,
+        inclusive,
+        netAmount: Math.round(netAmount * 100) / 100,
+        gstAmount: Math.round(gstAmount * 100) / 100,
+        totalAmount: Math.round(totalAmount * 100) / 100,
+        cgst: Math.round(cgst * 100) / 100,
+        sgst: Math.round(sgst * 100) / 100
+    };
+}
+

@@ -312,6 +312,37 @@ def india_tax():
         return jsonify({'success': False, 'error': str(e)}), 400
 
 
+@app.route('/api/gst', methods=['POST'])
+def api_gst():
+    try:
+        data = request.json
+        amount = float(data.get('amount', 0))
+        rate = float(data.get('rate', 0))
+        inclusive = bool(data.get('inclusive', False))
+        
+        if inclusive:
+            net_amount = amount / (1 + rate / 100)
+            gst_amount = amount - net_amount
+            total_amount = amount
+        else:
+            gst_amount = amount * (rate / 100)
+            net_amount = amount
+            total_amount = amount + gst_amount
+            
+        return jsonify({
+            'success': True,
+            'data': {
+                'netAmount': round(net_amount, 2),
+                'gstAmount': round(gst_amount, 2),
+                'totalAmount': round(total_amount, 2),
+                'cgst': round(gst_amount / 2, 2),
+                'sgst': round(gst_amount / 2, 2)
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
 # ─── Serve React Frontend (FINAL FIX) ─────────────────────────────────
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")

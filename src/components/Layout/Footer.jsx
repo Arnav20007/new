@@ -21,6 +21,7 @@ export default function Footer() {
                         <Link to="/emi-calculator">EMI Calculator</Link>
                         <Link to="/india-tax-calculator">India Tax</Link>
                         <Link to="/credit-card-payoff-calculator">Credit Card Payoff</Link>
+                        <Link to="/gst-calculator">GST Calculator</Link>
                     </div>
                     <div className="footer-col" id="footer-resources">
                         <h4>Learning Center</h4>
@@ -29,6 +30,7 @@ export default function Footer() {
                         <Link to="/retirement-calculator#seo">Retirement Strategy</Link>
                         <Link to="/inflation-calculator#seo">Economics of Inflation</Link>
                         <Link to="/debt-snowball-calculator#seo">Payoff Methodologies</Link>
+                        <Link to="/gst-calculator#seo">GST Explained</Link>
                     </div>
                     <div className="footer-col" id="footer-legal">
                         <h4>Legal & Trust</h4>

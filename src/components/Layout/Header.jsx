@@ -20,6 +20,7 @@ const allTools = [
     { path: '/emi-calculator', label: 'EMI Calculator' },
     { path: '/india-tax-calculator', label: 'India Tax' },
     { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff' },
+    { path: '/gst-calculator', label: 'GST Calculator' },
 ];
 
 export default function Header() {
