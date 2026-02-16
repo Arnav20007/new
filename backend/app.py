@@ -222,6 +222,96 @@ def inflation():
         return jsonify({'success': False, 'error': str(e)}), 400
 
 
+# ─── SIP Calculator ──────────────────────────────────────────────────
+@app.route('/api/calculate/sip', methods=['POST'])
+def sip_calculate():
+    data = request.json
+    try:
+        monthly = float(data.get('monthlyInvestment', 0))
+        rate = float(data.get('annualRate', 0))
+        years = int(data.get('years', 0))
+        
+        monthly_rate = rate / 100 / 12
+        months = years * 12
+        # Future value of an annuity due
+        maturity = monthly * (((pow(1 + monthly_rate, months) - 1) / monthly_rate) * (1 + monthly_rate))
+        invested = monthly * months
+        
+        return jsonify({
+            'success': True,
+            'data': {
+                'totalInvested': round(invested),
+                'estReturns': round(maturity - invested),
+                'totalValue': round(maturity)
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
+# ─── EMI Calculator ──────────────────────────────────────────────────
+@app.route('/api/calculate/emi', methods=['POST'])
+def emi_calculate():
+    data = request.json
+    try:
+        principal = float(data.get('principal', 0))
+        rate = float(data.get('rate', 0))
+        years = int(data.get('years', 0))
+        
+        r = rate / 12 / 100
+        n = years * 12
+        emi = (principal * r * pow(1 + r, n)) / (pow(1 + r, n) - 1)
+        total = emi * n
+        
+        return jsonify({
+            'success': True,
+            'data': {
+                'emi': round(emi),
+                'totalInterest': round(total - principal),
+                'totalPayment': round(total)
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
+# ─── India Tax Calculator ─────────────────────────────────────────────
+@app.route('/api/calculate/india-tax', methods=['POST'])
+def india_tax():
+    data = request.json
+    try:
+        income = float(data.get('annualIncome', 0))
+        standard_deduction = 75000
+        taxable = max(0, income - standard_deduction)
+        tax = 0
+        
+        # New Regime 2024-25 Slabs
+        if taxable <= 300000: tax = 0
+        elif taxable <= 700000: tax = (taxable - 300000) * 0.05
+        elif taxable <= 1000000: tax = (400000 * 0.05) + (taxable - 700000) * 0.10
+        elif taxable <= 1200000: tax = (400000 * 0.05) + (300000 * 0.10) + (taxable - 1000000) * 0.15
+        elif taxable <= 1500000: tax = (400000 * 0.05) + (300000 * 0.10) + (200000 * 0.15) + (taxable - 1200000) * 0.20
+        else: tax = (400000 * 0.05) + (300000 * 0.10) + (200000 * 0.15) + (300000 * 0.20) + (taxable - 1500000) * 0.30
+
+        # Section 87A rebate for income up to 7L
+        if taxable <= 700000: tax = 0
+        
+        cess = tax * 0.04
+        total_tax = tax + cess
+        
+        return jsonify({
+            'success': True,
+            'data': {
+                'taxableIncome': round(taxable),
+                'totalTax': round(total_tax),
+                'takeHome': round(income - total_tax),
+                'effectiveRate': round((total_tax / income) * 100, 2) if income > 0 else 0
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+
 # ─── Serve React Frontend (FINAL FIX) ─────────────────────────────────
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")

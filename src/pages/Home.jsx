@@ -38,6 +38,34 @@ const calculators = [
         tags: ['Debt Free', 'Snowball', 'Avalanche'],
         image: '/images/calc-debt.svg',
     },
+    {
+        icon: '📊', title: 'SIP Calculator',
+        description: 'Estimate the future value of your Systematic Investment Plan (SIP) in mutual funds.',
+        path: '/sip-calculator',
+        tags: ['Mutual Funds', 'Investing', 'Wealth'],
+        image: '/images/calc-sip.svg',
+    },
+    {
+        icon: '🚗', title: 'EMI Calculator',
+        description: 'Calculate your monthly loan payments for home, car, or personal loans.',
+        path: '/emi-calculator',
+        tags: ['Loan', 'EMI', 'Mortgage'],
+        image: '/images/calc-emi.svg',
+    },
+    {
+        icon: '🇮🇳', title: 'India Income Tax Calculator',
+        description: 'Calculate your tax liability under the New Tax Regime for FY 2024-25.',
+        path: '/india-tax-calculator',
+        tags: ['Tax', 'Income Tax', 'India'],
+        image: '/images/calc-tax.svg',
+    },
+    {
+        icon: '💳', title: 'Credit Card Payoff Calculator',
+        description: 'Plan your path to zero balance and see how much interest you can save.',
+        path: '/credit-card-payoff-calculator',
+        tags: ['Debt', 'Credit Card', 'Finance'],
+        image: '/images/calc-cc.svg',
+    },
 ];
 
 export default function Home() {

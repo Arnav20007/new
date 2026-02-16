@@ -12,6 +12,10 @@ const LoanPayoffCalculator = lazy(() => import('./pages/LoanPayoffCalculator'));
 const RetirementCalculator = lazy(() => import('./pages/RetirementCalculator'));
 const InflationCalculator = lazy(() => import('./pages/InflationCalculator'));
 const DebtSnowballCalculator = lazy(() => import('./pages/DebtSnowballCalculator'));
+const SIPCalculator = lazy(() => import('./pages/SIPCalculator'));
+const EMICalculator = lazy(() => import('./pages/EMICalculator'));
+const IndiaTaxCalculator = lazy(() => import('./pages/IndiaTaxCalculator'));
+const CreditCardPayoffCalculator = lazy(() => import('./pages/CreditCardPayoffCalculator'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
@@ -49,6 +53,10 @@ export default function App() {
                   <Route path="/retirement-calculator" element={<RetirementCalculator />} />
                   <Route path="/inflation-calculator" element={<InflationCalculator />} />
                   <Route path="/debt-snowball-calculator" element={<DebtSnowballCalculator />} />
+                  <Route path="/sip-calculator" element={<SIPCalculator />} />
+                  <Route path="/emi-calculator" element={<EMICalculator />} />
+                  <Route path="/india-tax-calculator" element={<IndiaTaxCalculator />} />
+                  <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                   <Route path="/disclaimer" element={<Disclaimer />} />

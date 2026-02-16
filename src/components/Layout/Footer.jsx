@@ -17,6 +17,10 @@ export default function Footer() {
                         <Link to="/retirement-calculator">Retirement Plan</Link>
                         <Link to="/inflation-calculator">Inflation Impact</Link>
                         <Link to="/debt-snowball-calculator">Debt Snowball</Link>
+                        <Link to="/sip-calculator">SIP Calculator</Link>
+                        <Link to="/emi-calculator">EMI Calculator</Link>
+                        <Link to="/india-tax-calculator">India Tax</Link>
+                        <Link to="/credit-card-payoff-calculator">Credit Card Payoff</Link>
                     </div>
                     <div className="footer-col" id="footer-resources">
                         <h4>Learning Center</h4>

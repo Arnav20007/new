@@ -357,3 +357,127 @@ function simulatePayoff(debts, extraPayment) {
         payoffOrder: debts.map(d => d.name),
     };
 }
+
+/**
+ * SIP (Systematic Investment Plan) Calculator
+ * @param {number} monthlyInvestment - Amount invested every month
+ * @param {number} annualRate - Expected annual return rate (%)
+ * @param {number} years - Duration of investment
+ * @returns {Object} Wealth gained and maturity value
+ */
+export function calculateSIP(monthlyInvestment, annualRate, years) {
+    const monthlyRate = annualRate / 100 / 12;
+    const months = years * 12;
+    const maturityValue = monthlyInvestment * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+    const totalInvested = monthlyInvestment * months;
+
+    const yearlyData = [];
+    for (let y = 1; y <= years; y++) {
+        const m = y * 12;
+        const val = monthlyInvestment * (((Math.pow(1 + monthlyRate, m) - 1) / monthlyRate) * (1 + monthlyRate));
+        yearlyData.push({
+            year: y,
+            investment: Math.round(monthlyInvestment * m),
+            wealthGained: Math.round(val - (monthlyInvestment * m)),
+            maturityValue: Math.round(val)
+        });
+    }
+
+    return {
+        totalInvested: Math.round(totalInvested),
+        estReturns: Math.round(maturityValue - totalInvested),
+        totalValue: Math.round(maturityValue),
+        yearlyData
+    };
+}
+
+/**
+ * EMI (Equated Monthly Installment) Calculator
+ * @param {number} principal - Loan amount
+ * @param {number} rate - Annual interest rate (%)
+ * @param {number} years - Tenure in years
+ * @returns {Object} EMI amount and total payment breakdown
+ */
+export function calculateEMI(principal, rate, years) {
+    const r = rate / 12 / 100;
+    const n = years * 12;
+    const emi = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const totalPayment = emi * n;
+    const totalInterest = totalPayment - principal;
+
+    const schedule = [];
+    let balance = principal;
+    for (let i = 1; i <= n; i++) {
+        const interest = balance * r;
+        const principalPaid = emi - interest;
+        balance -= principalPaid;
+        if (i % 12 === 0 || i === n) {
+            schedule.push({
+                year: Math.ceil(i / 12),
+                payment: Math.round(emi * 12),
+                principalPaid: Math.round(principal - balance),
+                interestPaid: Math.round((emi * i) - (principal - balance)),
+                remainingBalance: Math.round(Math.max(0, balance))
+            });
+        }
+    }
+
+    return {
+        emi: Math.round(emi),
+        totalInterest: Math.round(totalInterest),
+        totalPayment: Math.round(totalPayment),
+        schedule
+    };
+}
+
+/**
+ * India Income Tax Calculator (New Regime FY 2024-25)
+ * @param {number} annualIncome - Gross annual salary
+ * @returns {Object} Tax breakdown
+ */
+export function calculateIndiaTax(annualIncome) {
+    const standardDeduction = 75000;
+    const taxableIncome = Math.max(0, annualIncome - standardDeduction);
+    let tax = 0;
+
+    // Slabs for New Regime 2024-25
+    if (taxableIncome <= 300000) {
+        tax = 0;
+    } else if (taxableIncome <= 700000) {
+        tax = (taxableIncome - 300000) * 0.05;
+    } else if (taxableIncome <= 1000000) {
+        tax = (400000 * 0.05) + (taxableIncome - 700000) * 0.10;
+    } else if (taxableIncome <= 1200000) {
+        tax = (400000 * 0.05) + (300000 * 0.10) + (taxableIncome - 1000000) * 0.15;
+    } else if (taxableIncome <= 1500000) {
+        tax = (400000 * 0.05) + (300000 * 0.10) + (200000 * 0.15) + (taxableIncome - 1200000) * 0.20;
+    } else {
+        tax = (400000 * 0.05) + (300000 * 0.10) + (200000 * 0.15) + (300000 * 0.20) + (taxableIncome - 1500000) * 0.30;
+    }
+
+    // 87A Rebate (No tax up to ₹7L taxable income)
+    if (taxableIncome <= 700000) tax = 0;
+
+    const cess = tax * 0.04;
+    const totalTax = tax + cess;
+
+    return {
+        taxableIncome: Math.round(taxableIncome),
+        baseTax: Math.round(tax),
+        cess: Math.round(cess),
+        totalTax: Math.round(totalTax),
+        takeHome: Math.round(annualIncome - totalTax),
+        effectiveRate: ((totalTax / annualIncome) * 100).toFixed(2)
+    };
+}
+
+/**
+ * Credit Card Payoff Calculator
+ * @param {number} balance - Current credit card debt
+ * @param {number} rate - Annual interest rate (%)
+ * @param {number} monthlyPayment - Monthly payment amount
+ * @returns {Object} Payoff timeline
+ */
+export function calculateCreditCardPayoff(balance, rate, monthlyPayment) {
+    return calculateLoanPayoff(balance, rate, monthlyPayment); // Reuses loan logic as it's identical math
+}
