@@ -13,31 +13,22 @@ export default function FAQSection({ faqs }) {
     return (
         <section className="faq-section" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
-            <div itemScope itemType="https://schema.org/FAQPage">
+            <div>
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
                         className={`faq-item ${openIndex === index ? 'open' : ''}`}
-                        itemScope
-                        itemProp="mainEntity"
-                        itemType="https://schema.org/Question"
                     >
                         <button
                             className="faq-question"
                             onClick={() => toggle(index)}
                             aria-expanded={openIndex === index}
-                            itemProp="name"
                         >
                             {faq.question}
                             <span className="faq-chevron">▾</span>
                         </button>
-                        <div
-                            className="faq-answer"
-                            itemScope
-                            itemProp="acceptedAnswer"
-                            itemType="https://schema.org/Answer"
-                        >
-                            <div className="faq-answer-inner" itemProp="text">
+                        <div className="faq-answer">
+                            <div className="faq-answer-inner">
                                 {faq.answer}
                             </div>
                         </div>

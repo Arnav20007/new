@@ -12,8 +12,8 @@ export default function SEOHead({
     type = 'website',
 }) {
     const siteName = 'FinanceCalc';
-    const fullTitle = `${title} | ${siteName}`;
-    const baseUrl = 'https://financecalc.com';
+    const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+    const baseUrl = 'https://financecalc1.pythonanywhere.com';
 
     return (
         <Helmet>
