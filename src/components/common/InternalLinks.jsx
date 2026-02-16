@@ -9,6 +9,7 @@ const calculatorLinks = [
     { path: '/india-tax-calculator', label: 'India Tax Calculator' },
     { path: '/gst-calculator', label: 'GST Calculator India' },
     { path: '/hra-calculator', label: 'HRA Calculator India' },
+    { path: '/fire-calculator', label: 'FIRE Calculator India' },
 ];
 
 /**

@@ -18,6 +18,7 @@ const IndiaTaxCalculator = lazy(() => import('./pages/IndiaTaxCalculator'));
 const CreditCardPayoffCalculator = lazy(() => import('./pages/CreditCardPayoffCalculator'));
 const GSTCalculator = lazy(() => import('./pages/GSTCalculator'));
 const HRACalculator = lazy(() => import('./pages/HRACalculator'));
+const FIRECalculator = lazy(() => import('./pages/FIRECalculator'));
 const IncomeTaxGuide = lazy(() => import('./pages/guides/IncomeTaxGuide'));
 const SIPvsFDGuide = lazy(() => import('./pages/guides/SIPvsFDGuide'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -63,6 +64,7 @@ export default function App() {
                   <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
                   <Route path="/gst-calculator" element={<GSTCalculator />} />
                   <Route path="/hra-calculator" element={<HRACalculator />} />
+                  <Route path="/fire-calculator" element={<FIRECalculator />} />
                   <Route path="/guides/how-to-calculate-income-tax-india" element={<IncomeTaxGuide />} />
                   <Route path="/guides/sip-vs-fd-which-is-better" element={<SIPvsFDGuide />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -74,6 +74,13 @@ const calculators = [
         image: '/images/calc-gst.svg',
     },
     {
+        icon: '🔥', title: 'FIRE Calculator',
+        description: 'Find your number for Financial Independence and Early Retirement in India.',
+        path: '/fire-calculator',
+        tags: ['Retirement', 'Trending', 'Independence'],
+        image: '/images/calc-fire.svg',
+    },
+    {
         icon: '🏠', title: 'HRA Calculator',
         description: 'Calculate your House Rent Allowance tax exemption based on Indian income tax rules.',
         path: '/hra-calculator',

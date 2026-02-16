@@ -23,6 +23,7 @@ export default function Footer() {
                         <Link to="/credit-card-payoff-calculator">Credit Card Payoff</Link>
                         <Link to="/gst-calculator">GST Calculator</Link>
                         <Link to="/hra-calculator">HRA Calculator</Link>
+                        <Link to="/fire-calculator">FIRE Calculator</Link>
                     </div>
                     <div className="footer-col" id="footer-resources">
                         <h4>Learning Center</h4>
@@ -33,6 +34,7 @@ export default function Footer() {
                         <Link to="/debt-snowball-calculator#seo">Payoff Methodologies</Link>
                         <Link to="/gst-calculator#seo">GST Explained</Link>
                         <Link to="/hra-calculator#seo">HRA Tax Saving Guide</Link>
+                        <Link to="/fire-calculator#seo">FIRE Strategy Guide</Link>
                     </div>
                     <div className="footer-col" id="footer-legal">
                         <h4>Legal & Trust</h4>

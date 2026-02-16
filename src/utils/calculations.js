@@ -548,3 +548,80 @@ export function calculateHRA(basicSalary, da, hraReceived, rentPaid, isMetro) {
 }
 
 
+/**
+ * FIRE (Financial Independence, Retire Early) Calculator
+ * @param {number} currentAge - User's current age
+ * @param {number} targetAge - Target retirement age
+ * @param {number} currentSavings - Existing retirement corpus
+ * @param {number} monthlyInvest - Monthly contribution
+ * @param {number} monthlyExp - Current monthly expenses
+ * @param {number} returnPre - Expected ROI before retirement (%)
+ * @param {number} returnPost - Expected ROI after retirement (%)
+ * @param {number} inflation - Expected inflation rate (%)
+ * @returns {Object} FIRE status and year-by-year projections
+ */
+export function calculateFIRE(currentAge, targetAge, currentSavings, monthlyInvest, monthlyExp, returnPre, returnPost, inflation) {
+    const yearsToRetire = targetAge - currentAge;
+    const monthsToRetire = yearsToRetire * 12;
+    const r_pre = returnPre / 100 / 12;
+    const r_post = returnPost / 100 / 12;
+    const inf = inflation / 100 / 12;
+
+    let corpus = currentSavings;
+    const timeline = [];
+
+    // Stage 1: Accumulation
+    for (let m = 1; m <= monthsToRetire; m++) {
+        corpus = corpus * (1 + r_pre) + monthlyInvest;
+        if (m % 12 === 0) {
+            timeline.push({
+                age: currentAge + (m / 12),
+                corpus: Math.round(corpus),
+                expenses: Math.round(monthlyExp * Math.pow(1 + (inflation / 100), m / 12)),
+                phase: 'Accumulation'
+            });
+        }
+    }
+
+    const fireNumber = corpus;
+    const expenseAtRetirement = monthlyExp * Math.pow(1 + (inflation / 100), yearsToRetire);
+
+    // Stage 2: Withdrawal (until age 90)
+    let currentExp = expenseAtRetirement;
+    let isBroke = false;
+    let brokeAge = null;
+
+    for (let m = 1; m <= (90 - targetAge) * 12; m++) {
+        corpus = (corpus - currentExp) * (1 + r_post);
+        currentExp = currentExp * (1 + inf);
+
+        if (corpus <= 0 && !isBroke) {
+            isBroke = true;
+            brokeAge = targetAge + Math.floor(m / 12);
+        }
+
+        if (m % 12 === 0 && (targetAge + (m / 12)) <= 95) {
+            timeline.push({
+                age: targetAge + (m / 12),
+                corpus: Math.max(0, Math.round(corpus)),
+                expenses: Math.round(currentExp),
+                phase: 'Retirement'
+            });
+        }
+    }
+
+    // Safe Withdrawal Rate check (4% rule adjusted for India/inflation)
+    // In India, usually 3% is considered safer due to higher inflation
+    const swrAmount = (fireNumber * 0.03) / 12;
+    const isSafe = swrAmount >= expenseAtRetirement;
+
+    return {
+        fireNumber: Math.round(fireNumber),
+        expenseAtRetirement: Math.round(expenseAtRetirement),
+        isSafe,
+        isBroke,
+        brokeAge,
+        yearsToRetire,
+        timeline
+    };
+}

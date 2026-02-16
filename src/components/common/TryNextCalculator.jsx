@@ -5,6 +5,7 @@ const allCalculators = [
     { path: '/emi-calculator', name: 'EMI Calculator India', desc: 'Calculate monthly payments for Home or Car loans.' },
     { path: '/india-tax-calculator', name: 'India Tax Calculator', desc: 'Compare New vs Old tax regimes for 2024-25.' },
     { path: '/hra-calculator', name: 'HRA Calculator India', desc: 'Calculate your house rent tax exemption.' },
+    { path: '/fire-calculator', name: 'FIRE Calculator India', desc: 'Plan your early retirement and financial freedom.' },
     { path: '/gst-calculator', name: 'GST Calculator India', desc: 'Quickly calculate GST inclusive and exclusive prices.' },
 ];
 
