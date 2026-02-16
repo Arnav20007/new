@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://financecalc.com/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://financecalc.com/compound-interest-calculator</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/compound-interest-calculator</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://financecalc.com/loan-payoff-calculator</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/loan-payoff-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financecalc1.pythonanywhere.com/retirement-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financecalc1.pythonanywhere.com/inflation-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financecalc1.pythonanywhere.com/debt-snowball-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financecalc1.pythonanywhere.com/sip-calculator</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://financecalc.com/retirement-calculator</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/emi-calculator</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://financecalc.com/inflation-calculator</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/india-tax-calculator</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://financecalc.com/debt-snowball-calculator</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://financecalc1.pythonanywhere.com/credit-card-payoff-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financecalc1.pythonanywhere.com/gst-calculator</loc>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://financecalc.com/privacy-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://financecalc.com/terms-and-conditions</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://financecalc.com/disclaimer</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
