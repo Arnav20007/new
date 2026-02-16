@@ -1226,7 +1226,32 @@ p {
   width: 100%;
   position: relative;
   overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
+
+.privacy-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.privacy-badge svg {
+  flex-shrink: 0;
+  color: var(--color-success);
+  opacity: 0.8;
+}
+
 
 .btn-calculate::before {
   content: '';

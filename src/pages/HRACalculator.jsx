@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import {
@@ -41,19 +41,20 @@ export default function HRACalculator() {
     const [results, setResults] = useState(null);
     const resultsRef = useRef(null);
 
-    const handleCalculate = (e) => {
-        e.preventDefault();
-        if (!validateAll()) return;
-        const res = calculateHRA(
-            getNumericValue('basicSalary'),
-            getNumericValue('da'),
-            getNumericValue('hraReceived'),
-            getNumericValue('rentPaid'),
-            isMetro
-        );
-        setResults(res);
-        setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-    };
+    // Instant Calculation Logic
+    useEffect(() => {
+        const salary = getNumericValue('basicSalary');
+        const hra = getNumericValue('hraReceived');
+        const rent = getNumericValue('rentPaid');
+        const da = getNumericValue('da');
+
+        if (salary > 0 && hra > 0 && rent > 0) {
+            const res = calculateHRA(salary, da, hra, rent, isMetro);
+            setResults(res);
+        } else {
+            setResults(null);
+        }
+    }, [inputs, isMetro, symbol]);
 
     const doughnutData = results ? {
         labels: ['Tax Exempt HRA', 'Taxable HRA'],
@@ -79,7 +80,7 @@ export default function HRACalculator() {
                 <p className="hero-subtitle">Calculate your tax-exempt House Rent Allowance (HRA) and maximize your tax savings.</p>
             </section>
 
-            <form className="calculator-form" onSubmit={handleCalculate} noValidate>
+            <form className="calculator-form" noValidate>
                 <div className="calculation-type-toggle" style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem', background: 'var(--bg-glass)', padding: '0.375rem', borderRadius: ' var(--radius-md)', border: '1px solid var(--border-primary)' }}>
                     <button type="button"
                         className={`toggle-btn ${isMetro ? 'active' : ''}`}
@@ -104,7 +105,10 @@ export default function HRACalculator() {
                     <ValidatedInput name="rentPaid" label="Monthly Rent Paid" value={inputs.rentPaid} onChange={handleChange} onBlur={handleBlur} error={errors.rentPaid} touched={touched.rentPaid} prefix={symbol} />
                 </div>
 
-                <button type="submit" className="btn-calculate" style={{ marginTop: '1.5rem' }}>Calculate HRA Exemption</button>
+                <div style={{ marginTop: '1.25rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12" style={{ marginRight: '4px', verticalAlign: 'middle' }}><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Calculation based on Rule 2A of IT Rules - results update instantly.
+                </div>
                 <PrivacyBadge />
             </form>
 

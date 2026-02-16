@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import {
@@ -39,13 +39,18 @@ export default function GSTCalculator() {
     const [results, setResults] = useState(null);
     const resultsRef = useRef(null);
 
-    const handleCalculate = (e) => {
-        e.preventDefault();
-        if (!validateAll()) return;
-        const res = calculateGST(getNumericValue('amount'), getNumericValue('rate'), inclusive);
-        setResults(res);
-        setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-    };
+    // Instant Calculation Logic
+    useEffect(() => {
+        const amount = getNumericValue('amount');
+        const rate = getNumericValue('rate');
+
+        if (amount > 0 && rate >= 0) {
+            const res = calculateGST(amount, rate, inclusive);
+            setResults(res);
+        } else {
+            setResults(null);
+        }
+    }, [inputs, inclusive, symbol]);
 
     const doughnutData = results ? {
         labels: ['Net Amount', 'Total GST'],
@@ -71,7 +76,7 @@ export default function GSTCalculator() {
                 <p className="hero-subtitle">Quickly calculate Goods and Services Tax for your business or personal purchases.</p>
             </section>
 
-            <form className="calculator-form" onSubmit={handleCalculate} noValidate>
+            <form className="calculator-form" noValidate>
                 <div className="calculation-type-toggle" style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem', background: 'var(--bg-glass)', padding: '0.375rem', borderRadius: ' var(--radius-md)', border: '1px solid var(--border-primary)' }}>
                     <button type="button"
                         className={`toggle-btn ${!inclusive ? 'active' : ''}`}
@@ -100,7 +105,10 @@ export default function GSTCalculator() {
                     ))}
                 </div>
 
-                <button type="submit" className="btn-calculate" style={{ marginTop: '1.5rem' }}>Calculate GST</button>
+                <div style={{ marginTop: '1.25rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12" style={{ marginRight: '4px', verticalAlign: 'middle' }}><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    GST breakdown updates instantly as you type.
+                </div>
                 <PrivacyBadge />
             </form>
 

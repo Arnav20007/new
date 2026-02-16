@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import {
@@ -36,13 +36,16 @@ export default function IndiaTaxCalculator() {
     const [results, setResults] = useState(null);
     const resultsRef = useRef(null);
 
-    const handleCalculate = (e) => {
-        e.preventDefault();
-        if (!validateAll()) return;
-        const res = calculateIndiaTax(getNumericValue('annualIncome'));
-        setResults(res);
-        setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-    };
+    // Instant Calculation Logic
+    useEffect(() => {
+        const income = getNumericValue('annualIncome');
+        if (income >= 100000) {
+            const res = calculateIndiaTax(income);
+            setResults(res);
+        } else {
+            setResults(null);
+        }
+    }, [inputs, symbol]);
 
     const doughnutData = results ? {
         labels: ['Take Home Salary', 'Total Tax (incl. Cess)'],
@@ -66,11 +69,14 @@ export default function IndiaTaxCalculator() {
                 <p className="hero-subtitle">Calculate your tax liability under the New Tax Regime for FY 2024-25 (AY 2025-26).</p>
             </section>
 
-            <form className="calculator-form" onSubmit={handleCalculate} noValidate>
+            <form className="calculator-form" noValidate>
                 <div className="form-grid">
                     <ValidatedInput name="annualIncome" label="Gross Annual Salary" value={inputs.annualIncome} onChange={handleChange} onBlur={handleBlur} error={errors.annualIncome} touched={touched.annualIncome} prefix="₹" className="full-width" />
                 </div>
-                <button type="submit" className="btn-calculate">Calculate Tax</button>
+                <div style={{ marginTop: '1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="12" height="12" style={{ marginRight: '4px', verticalAlign: 'middle' }}><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Tax computed instantly based on latest 2024-25 budget rules.
+                </div>
                 <PrivacyBadge />
             </form>
 
