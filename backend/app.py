@@ -12,11 +12,10 @@ CORS(app)
 
 # Configuration
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://localhost:5432/financecalc')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# 📁 Frontend build folder
-FRONTEND_FOLDER = os.path.join(os.path.dirname(__file__), '..', 'dist')
+# 📁 Absolute path to dist folder
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FRONTEND_FOLDER = os.path.join(BASE_DIR, "dist")
 
 
 # ─── Health Check ───────────────────────────────────────────────────────
@@ -105,6 +104,7 @@ def loan_payoff():
             balance -= principal_paid
             total_interest += interest
             balance = max(0, balance)
+
             schedule.append({
                 'month': month,
                 'payment': round(pmt, 2),
@@ -149,11 +149,12 @@ def retirement():
 
         for year in range(1, years + 1):
             yearly_growth = 0
-            for month in range(1, 13):
+            for month in range(12):
                 interest = balance * monthly_rate
                 yearly_growth += interest
                 balance += interest + monthly_contribution
             total_contributions += monthly_contribution * 12
+
             projection.append({
                 'age': current_age + year,
                 'year': year,
@@ -168,8 +169,6 @@ def retirement():
             'success': True,
             'data': {
                 'retirementCorpus': round(balance, 2),
-                'totalContributions': round(total_contributions, 2),
-                'totalGrowth': round(balance - total_contributions, 2),
                 'annualWithdrawal': annual_withdrawal,
                 'monthlyWithdrawal': round(annual_withdrawal / 12, 2),
                 'projection': projection,
@@ -194,42 +193,35 @@ def inflation():
         for year in range(1, years + 1):
             future_value = current_value * ((1 + rate) ** year)
             purchasing_power = current_value / ((1 + rate) ** year)
+
             breakdown.append({
                 'year': year,
                 'futureValue': round(future_value, 2),
                 'purchasingPower': round(purchasing_power, 2),
-                'valueEroded': round(current_value - purchasing_power, 2),
-                'cumulativeInflation': round(((1 + rate) ** year - 1) * 100, 2),
             })
-
-        final_future = current_value * ((1 + rate) ** years)
-        final_pp = current_value / ((1 + rate) ** years)
 
         return jsonify({
             'success': True,
-            'data': {
-                'currentValue': current_value,
-                'futureEquivalent': round(final_future, 2),
-                'futurePurchasingPower': round(final_pp, 2),
-                'totalInflation': round(((1 + rate) ** years - 1) * 100, 2),
-                'breakdown': breakdown,
-            }
+            'data': breakdown
         })
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 
 
-# ─── Serve React Frontend ─────────────────────────────────────────────
-@app.route("/")
-def serve_frontend():
-    return send_from_directory(FRONTEND_FOLDER, "index.html")
-
+# ─── Serve React Frontend (FIXED VERSION) ─────────────────────────────
+@app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
-def serve_static(path):
-    return send_from_directory(FRONTEND_FOLDER, path)
+def serve_react(path):
+    file_path = os.path.join(FRONTEND_FOLDER, path)
+
+    # If file exists in dist folder → serve it
+    if path != "" and os.path.exists(file_path):
+        return send_from_directory(FRONTEND_FOLDER, path)
+
+    # Otherwise serve index.html (React Router support)
+    return send_from_directory(FRONTEND_FOLDER, "index.html")
 
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
-    app.run(host='0.0.0.0', port=port, debug=debug)
+    app.run(host='0.0.0.0', port=port)
