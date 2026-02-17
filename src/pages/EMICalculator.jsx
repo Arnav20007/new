@@ -100,10 +100,15 @@ export default function EMICalculator() {
                 title="EMI Calculator India – Loan Planner | FinanceCalc"
                 description="Calculate Home, Car, or Personal Loan EMI instantly. Includes amortization schedule, interest breakdown and smart loan insights."
                 canonical="/emi-calculator"
+                faqSchema={faqs}
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>EMI Calculator</span></nav>
             <section className="calculator-hero">
                 <h1>EMI Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — based on latest bank rates.
+                </div>
                 <p className="hero-subtitle">Plan your loans with instant EMI projections and interest-saving strategies.</p>
             </section>
 
@@ -190,6 +195,42 @@ export default function EMICalculator() {
                     </div>
                 </div>
             )}
+
+            <section className="seo-content" id="seo">
+                <div className="container">
+                    <h2>Everything You Need to Know About EMI Calculations</h2>
+                    <p>An **Equated Monthly Installment (EMI)** is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both interest and principal each month, so that over a specified number of years, the loan is paid off in full. Our EMI calculator helps you plan your financial commitments for Home Loans, Car Loans, and Personal Loans with high precision.</p>
+
+                    <h3>How is EMI Calculated? (The Formula)</h3>
+                    <p>Financial institutions generally use the following mathematical formula to determine your EMI amount:</p>
+                    <p style={{ fontStyle: 'italic', textAlign: 'center' }}>E = [P x R x (1+R)^N] / [(1+R)^N - 1]</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li><strong>E</strong> is EMI</li>
+                        <li><strong>P</strong> is Principal Loan Amount</li>
+                        <li><strong>R</strong> is the monthly interest rate (Annual Rate / 12 / 100)</li>
+                        <li><strong>N</strong> is the loan tenure in months</li>
+                    </ul>
+
+                    <h3>The Impact of Loan Tenure on Interest</h3>
+                    <p>One of the biggest mistakes borrowers make is choosing a longer tenure to reduce the monthly EMI. While this makes your monthly budget easier to manage, it vastly increases the **Total Interest Payable**. We recommend choosing the shortest possible tenure that you can comfortably afford to minimize the extra money paid to the bank.</p>
+
+                    <h3>Strategies to Reduce Your Loan Burden</h3>
+                    <p>If you already have a loan or are planning to take one, consider these "interest-saving hacks":</p>
+                    <ul>
+                        <li><strong>Prepayments:</strong> Making small periodic prepayments towards your principal can drastically reduce your tenure and total interest.</li>
+                        <li><strong>Step-up EMIs:</strong> If your income is expected to grow, choose a plan where your EMI increases every year.</li>
+                        <li><strong>Balance Transfer:</strong> If other banks are offering significantly lower interest rates, consider moving your outstanding loan balance.</li>
+                    </ul>
+
+                    <h3>Types of Loans You Can Plan</h3>
+                    <ul>
+                        <li><strong>Home Loan:</strong> Typically long-term (15-30 years) with lower interest rates.</li>
+                        <li><strong>Car Loan:</strong> Medium-term (3-7 years) with fixed interest rates.</li>
+                        <li><strong>Personal Loan:</strong> Short-term (1-5 years) with higher interest rates and no collateral.</li>
+                    </ul>
+                </div>
+            </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/emi-calculator" />

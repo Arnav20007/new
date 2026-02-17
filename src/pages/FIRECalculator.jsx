@@ -136,10 +136,15 @@ export default function FIRECalculator() {
                 title="FIRE Calculator India – Retire Early Planner | FinanceCalc"
                 description="Calculate your FIRE Number and retirement date. Advanced planner accounting for Indian inflation, multi-stage returns and life expectancy."
                 canonical="/fire-calculator"
+                faqSchema={faqs}
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>FIRE Calculator</span></nav>
             <section className="calculator-hero">
                 <h1>FIRE Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — Secure your future.
+                </div>
                 <p className="hero-subtitle">Find your number for Financial Independence and Early Retirement.</p>
             </section>
 
@@ -263,6 +268,34 @@ export default function FIRECalculator() {
                     </div>
                 </div>
             )}
+
+            <section className="seo-content" id="seo">
+                <div className="container">
+                    <h2>How to Achieve Financial Independence & Retire Early (FIRE)</h2>
+                    <p>The **FIRE movement** (Financial Independence, Retire Early) has gained massive traction in India as young professionals seek to escape the 9-to-5 grind and gain control over their time. Achieving FIRE isn't just about quitting work; it's about building a corpus large enough that its returns can support your lifestyle for the rest of your life.</p>
+
+                    <h3>What is the FIRE Number?</h3>
+                    <p>Your FIRE Number is the target amount of invested capital you need to reach before you can safely retire. A traditionally accepted benchmark is the **25X Rule**, which suggests you need 25 times your annual expenses. However, in India, where inflation is higher (around 6-7%), many experts recommend aiming for **30X to 40X** of your annual expenses to ensure long-term sustainability.</p>
+
+                    <h3>Key Pillars of a Strong FIRE Plan</h3>
+                    <ul>
+                        <li><strong>Aggressive Savings Rate:</strong> Most FIRE proponents aim to save 50% to 70% of their monthly income during the accumulation phase.</li>
+                        <li><strong>Low-Cost Index Funds:</strong> Investing in diversified index funds or ETFs to capture market growth while minimizing fees.</li>
+                        <li><strong>The 3% Safe Withdrawal Rate (SWR):</strong> While the 4% rule is popular in the US, a 3% SWR is generally considered safer for the Indian context to account for market volatility and persistent inflation.</li>
+                        <li><strong>Emergency Fund & Health Insurance:</strong> Essential buffers to ensure your retirement corpus isn't drained by unexpected medical or life events.</li>
+                    </ul>
+
+                    <h3>Phases of the FIRE Journey</h3>
+                    <p>Our calculator breaks down your journey into two distinct phases:</p>
+                    <ul>
+                        <li><strong>Accumulation Phase:</strong> This is where you are actively working and investing. Your goal is to grow your existing savings into your "FIRE Number" by maximizing returns and SIP contributions.</li>
+                        <li><strong>Withdrawal Phase:</strong> Once you retire, you stop contributing and start withdrawing. The challenge here is ensuring your withdrawals don't outpace your portfolio growth, leading to corpus depletion.</li>
+                    </ul>
+
+                    <h3>Is FIRE possible for you?</h3>
+                    <p>Absolutely. Whether you are a salaried employee or a freelancer, the key is to **start early**. Even small monthly investments in your 20s can grow significantly by your 40s due to the power of compounding. Use our calculator to experiment with different retirement ages and see how working just 2-3 years longer can exponentially increase your post-retirement safety margin.</p>
+                </div>
+            </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/fire-calculator" />

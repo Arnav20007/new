@@ -77,6 +77,10 @@ export default function HRACalculator() {
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>HRA Calculator</span></nav>
             <section className="calculator-hero">
                 <h1>HRA Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — based on latest IT Rules India.
+                </div>
                 <p className="hero-subtitle">Calculate your tax-exempt House Rent Allowance (HRA) and maximize your tax savings.</p>
             </section>
 
@@ -143,6 +147,36 @@ export default function HRACalculator() {
                     </div>
                 </div>
             )}
+
+            <section className="seo-content" id="seo">
+                <div className="container">
+                    <h2>How HRA Tax Exemption is Calculated (Section 10(13A))</h2>
+                    <p>House Rent Allowance (HRA) is one of the most effective tax-saving components for salaried individuals in India. Under **Section 10(13A)** of the Income Tax Act, you can claim an exemption on the rent you pay for your residential accommodation. This calculator simplifies the complex rules to give you the exact exempt and taxable portion of your HRA.</p>
+
+                    <h3>The 3 Main Rules for HRA Exemption</h3>
+                    <p>The Income Tax Department calculates HRA exemption based on the **minimum** of the following three amounts:</p>
+                    <ul>
+                        <li><strong>Actual HRA Received:</strong> The specific amount listed as HRA in your periodic salary slip.</li>
+                        <li><strong>50% or 40% of Salary:</strong> Depending on your location. If you live in a Metro city (Delhi, Mumbai, Kolkata, Chennai), it's 50% of your salary (Basic + DA). For all other cities, it is 40%.</li>
+                        <li><strong>Excess Rent Paid:</strong> The total rent paid by you minus 10% of your annual salary (Basic + DA).</li>
+                    </ul>
+
+                    <h3>Metro vs. Non-Metro: What counts?</h3>
+                    <p>For tax purposes, the "Metro City" definition is very specific. Only the four major metropolitan areas—**New Delhi, Mumbai, Kolkata, and Chennai**—qualify for the 50% rule. Even if you live in high-growth cities like Bengaluru, Hyderabad, or Pune, you must follow the 40% rule for HRA calculation. Our calculator allows you to toggle this settings instantly.</p>
+
+                    <h3>Documents Needed to Claim HRA</h3>
+                    <p>While this calculator gives you the numbers, you will need the following to claim it legally with your employer or during ITR filing:</p>
+                    <ul>
+                        <li><strong>Rent Receipts:</strong> Signed receipts for each month or quarter.</li>
+                        <li><strong>Rent Agreement:</strong> A valid legal contract between you and the landlord.</li>
+                        <li><strong>Landlord's PAN:</strong> Mandatory if your annual rent exceeds ₹1,00,000.</li>
+                        <li><strong>Payment Proof:</strong> Digital transaction history is preferred for high rent amounts.</li>
+                    </ul>
+
+                    <h3>Can I claim both HRA and Home Loan benefits?</h3>
+                    <p>Yes, you can claim HRA exemption and Home Loan interest (Section 24) and principal (Section 80C) benefits simultaneously, provided you live in a rented house while owning a house in a different city or a house that is currently rented out. Tax planning in such cases requires careful documentation of your "ordinary place of residence."</p>
+                </div>
+            </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/hra-calculator" />

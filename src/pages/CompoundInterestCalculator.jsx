@@ -193,6 +193,10 @@ export default function CompoundInterestCalculator() {
 
             <section className="calculator-hero">
                 <h1>Compound Interest Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — Project your future wealth.
+                </div>
                 <p className="hero-subtitle">
                     See how your money grows over time with the power of compounding. Enter your details below for an instant, detailed projection.
                 </p>

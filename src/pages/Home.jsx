@@ -189,10 +189,28 @@ export default function Home() {
             </section>
 
             <section className="seo-content">
-                <h2>Plan for Every Stage of Life</h2>
-                <p>Whether you're just starting to invest, buying your first home, planning for retirement, or aggressively paying off debt, our calculators provide the detailed projections and insights you need to make informed decisions.</p>
-                <h2>Accurate, Transparent Calculations</h2>
-                <p>Every calculator shows its work with detailed breakdowns, year-by-year tables, and interactive charts. Download your results as a PDF to share with your spouse, financial advisor, or keep for your records.</p>
+                <div className="container">
+                    <h2>India's Most Accurate Financial Planning Portal</h2>
+                    <p>FinanceCalc is dedicated to providing Indian citizens with the most precise tools for wealth management, retirement planning, and tax optimization. In an era of shifting tax regimes and economic volatility, making decisions based on "gut feeling" is no longer enough. Our platform empowers you with mathematical certainty, whether you're navigating the **New Tax Regime (FY 2025-26)** or planning your first SIP.</p>
+
+                    <h3>Why Accurate Financial Calculators Matter</h3>
+                    <p>Even a 0.5% difference in interest rates or a minor misunderstanding of tax slabs can result in a loss of lakhs over a 20-year period. Our calculators are meticulously audited to reflect the latest circulars from the **Income Tax Department of India** and the **GST Council**. We don't just give you a number; we provide a complete roadmap with interactive charts, amortization schedules, and year-by-year wealth breakdowns.</p>
+
+                    <h3>Comprehensive Coverage for Every Money Goal</h3>
+                    <p>Whether you're looking for an **Income Tax Calculator** to compare regimes, a **GST Calculator** for your business, or a **FIRE Calculator** to plan an early exit from the corporate world, we have you covered. Our suite of tools includes industry-leading projections for:</p>
+                    <ul>
+                        <li><strong>Investment Planning:</strong> SIP, Compound Interest, and Lump Sum growth.</li>
+                        <li><strong>Tax & Salary:</strong> New Tax Regime, HRA Exemption, and GST calculations.</li>
+                        <li><strong>Life Stages:</strong> Retirement corpus building and the FIRE movement.</li>
+                        <li><strong>Debt Management:</strong> EMI, Loan Payoff, and Debt Snowball strategies.</li>
+                    </ul>
+
+                    <h3>Privacy-First & Completely Free</h3>
+                    <p>Your financial data is sensitive. Unlike other platforms that require sign-ups and harvest your data for marketing, **FinanceCalc is 100% anonymous**. All calculations happen directly in your browser. No data ever leaves your device, ensuring your financial secrets stay yours. We believe that professional-grade financial planning should be accessible to every Indian, free of charge and free of ads that track you.</p>
+
+                    <h3>Plan for Every Stage of Life</h3>
+                    <p>Whether you're just starting to invest, buying your first home, planning for retirement, or aggressively paying off debt, our calculators provide the detailed projections and insights you need to make informed decisions. Download your results as a PDF to share with your spouse, financial advisor, or keep for your records.</p>
+                </div>
             </section>
 
         </div>

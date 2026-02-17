@@ -122,7 +122,14 @@ export default function InflationCalculator() {
         <div className="calculator-page">
             <SEOHead title="Inflation Calculator India – Purchasing Power Tool | FinanceCalc" description="Calculate how inflation erodes your purchasing power over time. Updated for Indian inflation trends. plan your future costs accurately." canonical="/inflation-calculator" faqSchema={faqs} />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Inflation Calculator</span></nav>
-            <section className="calculator-hero"><h1>Inflation Calculator</h1><p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan accordingly.</p></section>
+            <section className="calculator-hero">
+                <h1>Inflation Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — Track purchasing power.
+                </div>
+                <p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan accordingly.</p>
+            </section>
 
             <form className="calculator-form" onSubmit={handleCalculate} id="inflation-form" noValidate>
                 <div className="form-top-actions">

@@ -142,7 +142,14 @@ export default function RetirementCalculator() {
         <div className="calculator-page">
             <SEOHead title="Retirement Calculator India – Plan Your Nest Egg | FinanceCalc" description="Calculate how much you need to retire comfortably in India. Project your retirement nest egg and estimate your future monthly income based on your savings." canonical="/retirement-calculator" faqSchema={faqs} />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Retirement Calculator</span></nav>
-            <section className="calculator-hero"><h1>Retirement Calculator</h1><p className="hero-subtitle">Project your retirement nest egg and estimate your future monthly income. Start planning your financial independence today.</p></section>
+            <section className="calculator-hero">
+                <h1>Retirement Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — Plan your nest egg.
+                </div>
+                <p className="hero-subtitle">Project your retirement nest egg and estimate your future monthly income. Start planning your financial independence today.</p>
+            </section>
 
             <form className="calculator-form" onSubmit={handleCalculate} id="retirement-form" noValidate>
                 <div className="form-top-actions">

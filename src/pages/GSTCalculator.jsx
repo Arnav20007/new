@@ -73,6 +73,10 @@ export default function GSTCalculator() {
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>GST Calculator</span></nav>
             <section className="calculator-hero">
                 <h1>GST Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — based on latest Indian GST rules.
+                </div>
                 <p className="hero-subtitle">Quickly calculate Goods and Services Tax for your business or personal purchases.</p>
             </section>
 
@@ -144,6 +148,46 @@ export default function GSTCalculator() {
                     </div>
                 </div>
             )}
+
+            <section className="seo-content" id="seo">
+                <div className="container">
+                    <h2>How GST is Calculated in India (2025-26)</h2>
+                    <p>Goods and Services Tax (GST) is a destination-based tax that replaced multiple indirect taxes in India. Understanding how to calculate GST is crucial for business owners, accountants, and consumers alike. This GST calculator helps you find both <strong>GST Inclusive</strong> (finding the original price after tax) and <strong>GST Exclusive</strong> (adding tax to a base price) amounts instantly.</p>
+
+                    <h3>The Formula for GST Calculation</h3>
+                    <p>To calculate GST manually, you can use these simple mathematical formulas:</p>
+                    <ul>
+                        <li><strong>For GST Addition (Exclusive):</strong> GST Amount = (Original Cost * GST%) / 100. Total Price = Original Cost + GST Amount.</li>
+                        <li><strong>For GST Removal (Inclusive):</strong> GST Amount = Total Price - [Total Price / (1 + (GST % / 100))]. Net Price = Total Price - GST Amount.</li>
+                    </ul>
+
+                    <h3>Understanding CGST, SGST, and IGST</h3>
+                    <p>Depending on the location of the buyer and seller, GST is divided into different components:</p>
+                    <ul>
+                        <li><strong>CGST (Central GST):</strong> Collected by the Central Government on an intra-state sale (e.g., a transaction within Maharashtra).</li>
+                        <li><strong>SGST (State GST):</strong> Collected by the State Government on an intra-state sale. For intra-state transactions, CGST and SGST are usually split 50-50 of the total GST rate.</li>
+                        <li><strong>IGST (Integrated GST):</strong> Collected by the Central Government for inter-state transactions (e.g., a sale from Gujarat to Delhi).</li>
+                    </ul>
+
+                    <h3>Current GST Slabs in India</h3>
+                    <p>The GST Council has categorized goods and services into four primary tax slabs:</p>
+                    <ul>
+                        <li><strong>5% Slab:</strong> Essential items like sugar, tea, coffee, and edible oil.</li>
+                        <li><strong>12% Slab:</strong> Items like butter, ghee, almonds, and fruit juice.</li>
+                        <li><strong>18% Slab:</strong> Most common goods and services, including hair oil, toothpaste, and electronics.</li>
+                        <li><strong>28% Slab:</strong> Luxury and "sin" goods like cars, tobacco, and high-end motorcycles.</li>
+                    </ul>
+
+                    <h3>Who should use the GST Calculator?</h3>
+                    <p>This tool is essential for anyone dealing with trade and commerce in India:</p>
+                    <ul>
+                        <li><strong>Retailers & Wholesalers:</strong> To quickly generate quotes and understand their tax liabilities.</li>
+                        <li><strong>Purchasing Managers:</strong> To calculate the actual "input credit" they can claim on business purchases.</li>
+                        <li><strong>Online Shoppers:</strong> To verify if the GST charged on their invoice matches the legal rates.</li>
+                        <li><strong>CA & Accountants:</strong> For quick cross-verification of multi-stage tax calculations.</li>
+                    </ul>
+                </div>
+            </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/gst-calculator" />

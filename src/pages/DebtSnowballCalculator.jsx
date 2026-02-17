@@ -156,6 +156,10 @@ export default function DebtSnowballCalculator() {
 
             <section className="calculator-hero">
                 <h1>Debt Snowball Calculator</h1>
+                <div className="last-updated-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                    Last updated: Feb 2026 — Break free from debt.
+                </div>
                 <p className="hero-subtitle">
                     Find the fastest, most cost-effective way to eliminate your debts. Compare snowball vs. avalanche strategies side by side.
                 </p>

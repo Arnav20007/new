@@ -12,8 +12,67 @@ export default function SEOHead({
     type = 'website',
 }) {
     const siteName = 'FinanceCalc';
-    const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
     const baseUrl = 'https://financecalc1.pythonanywhere.com';
+
+    // Ensure title is clean and doesn't duplicate siteName
+    const cleanTitle = title.includes(siteName)
+        ? title.split(siteName)[0].replace(/[|\-—–]\s*$/, '').trim()
+        : title;
+    const fullTitle = `${cleanTitle} | ${siteName}`;
+
+    // Unified Structured Data (@graph)
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'Organization',
+                '@id': `${baseUrl}/#organization`,
+                'name': siteName,
+                'url': baseUrl,
+                'logo': {
+                    '@type': 'ImageObject',
+                    'url': `${baseUrl}/favicon.svg`
+                }
+            },
+            {
+                '@type': 'WebSite',
+                '@id': `${baseUrl}/#website`,
+                'url': baseUrl,
+                'name': siteName,
+                'publisher': { '@id': `${baseUrl}/#organization` },
+                'potentialAction': {
+                    '@type': 'SearchAction',
+                    'target': `${baseUrl}/?q={search_term_string}`,
+                    'query-input': 'required name=search_term_string'
+                }
+            },
+            {
+                '@type': 'WebPage',
+                '@id': `${baseUrl}${canonical}#webpage`,
+                'url': `${baseUrl}${canonical}`,
+                'name': fullTitle,
+                'description': description,
+                'isPartOf': { '@id': `${baseUrl}/#website` },
+                'inLanguage': 'en-US',
+            }
+        ]
+    };
+
+    // Add FAQ Schema if present
+    if (faqSchema && faqSchema.length > 0) {
+        structuredData['@graph'].push({
+            '@type': 'FAQPage',
+            '@id': `${baseUrl}${canonical}#faq`,
+            'mainEntity': faqSchema.map(faq => ({
+                '@type': 'Question',
+                'name': faq.question,
+                'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': faq.answer,
+                },
+            })),
+        });
+    }
 
     return (
         <Helmet>
@@ -33,39 +92,11 @@ export default function SEOHead({
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={`${baseUrl}${ogImage}`} />
 
-            {/* FAQ Schema Markup */}
-            {faqSchema && (
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'FAQPage',
-                        mainEntity: faqSchema.map(faq => ({
-                            '@type': 'Question',
-                            name: faq.question,
-                            acceptedAnswer: {
-                                '@type': 'Answer',
-                                text: faq.answer,
-                            },
-                        })),
-                    })}
-                </script>
-            )}
-
-            {/* WebPage Schema */}
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'WebPage',
-                    name: title,
-                    description: description,
-                    url: `${baseUrl}${canonical}`,
-                    publisher: {
-                        '@type': 'Organization',
-                        name: siteName,
-                        url: baseUrl,
-                    },
-                })}
+            {/* Combined Structured Data Script */}
+            <script type="application/ld+json" key="structured-data">
+                {JSON.stringify(structuredData)}
             </script>
         </Helmet>
     );
