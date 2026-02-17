@@ -28,7 +28,7 @@ const validationRules = {
 };
 
 export default function IndiaTaxCalculator() {
-    const { formatCurrency } = useCurrency();
+    const { formatCurrency, symbol } = useCurrency();
     const { values: inputs, errors, touched, handleChange, handleBlur, validateAll, getNumericValue } = useValidatedInputs(
         { annualIncome: '1200000' },
         validationRules
