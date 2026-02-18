@@ -120,15 +120,20 @@ export default function InflationCalculator() {
 
     return (
         <div className="calculator-page">
-            <SEOHead title="Inflation Calculator India – Purchasing Power Tool | FinanceCalc" description="Calculate how inflation erodes your purchasing power over time. Updated for Indian inflation trends. plan your future costs accurately." canonical="/inflation-calculator" faqSchema={faqs} />
+            <SEOHead
+                title="Inflation Calculator USA – Purchasing Power Tool | FinanceCalc"
+                description="Calculate how inflation erodes your purchasing power in the USA over time. Join millions of Americans tracking their spending power with our accurate CPI-based tool."
+                canonical="/inflation-calculator"
+                faqSchema={faqs}
+            />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Inflation Calculator</span></nav>
             <section className="calculator-hero">
-                <h1>Inflation Calculator</h1>
+                <h1>Inflation Calculator USA</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Track purchasing power.
+                    Last updated: Feb 2026 — US CPI Data Core.
                 </div>
-                <p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan accordingly.</p>
+                <p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan your US financial future.</p>
             </section>
 
             <form className="calculator-form" onSubmit={handleCalculate} id="inflation-form" noValidate>
@@ -189,8 +194,8 @@ export default function InflationCalculator() {
 
             <InternalLinks currentPath="/inflation-calculator" />
             <section className="seo-content" id="seo">
-                <h2>The Silent Wealth Killer: Understanding Inflation's Impact</h2>
-                <p>Inflation is often described as a "silent tax." While it doesn't appear on your pay stub or bank statement, it is constantly eating away at the value of your money. Simply put, inflation is the rate at which the general level of prices for goods and services rises, and consequently, the purchasing power of your currency falls. If you don't account for inflation in your long-term financial planning, your future retirement lifestyle could be significantly leaner than you anticipate.</p>
+                <h2>The Silent Wealth Killer: Understanding Inflation's Impact on Americans</h2>
+                <p>Inflation is often described as a "silent tax." For many <strong>US households</strong>, it is a constant pressure on their daily budget. While it doesn't appear on your pay stub, it is steadily eating away at the value of your dollar. Simply put, inflation is the rate at which the general level of prices for goods and services rises. If you don't account for this in your long-term <strong>credit card debt in the US</strong> management or retirement planning, your future purchasing power could be significantly less than you expect.</p>
 
                 <h3>How Inflation is Measured: CPI and Beyond</h3>
                 <p>Most governments track inflation using a <strong>Consumer Price Index (CPI)</strong>. This index monitors a "basket of goods" — including housing, food, energy, healthcare, and transportation — and tracks how the cost of that basket changes over time. While the official "headline" inflation might be 2% or 3%, your <strong>personal inflation rate</strong> might be much higher depending on your spending habits (for example, if you have high medical costs or spend a lot on gasoline).</p>

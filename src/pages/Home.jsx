@@ -4,11 +4,18 @@ import AdSlot from '../components/common/AdSlot';
 
 const calculators = [
     {
-        icon: '🏠', title: 'Mortgage Calculator USA',
-        description: 'Calculate your monthly mortgage payments including taxes, insurance, and interest. Includes full amortization schedule.',
+        icon: '🏠', title: 'Mortgage Calculator with PMI',
+        description: 'Calculate your monthly mortgage payments including taxes, insurance, and PMI. Complete amortization schedule.',
         path: '/mortgage-calculator',
         tags: ['Home Loan', 'Mortgage', 'USA'],
         image: '/images/calc-emi.svg',
+    },
+    {
+        icon: '💰', title: '401(k) Calculator USA',
+        description: 'Project your retirement savings with employer matching and see how your 401(k) grows over your career.',
+        path: '/401k-calculator',
+        tags: ['Retirement', '401k', 'Planning'],
+        image: '/images/calc-retirement.svg',
     },
     {
         icon: '🎓', title: 'Student Loan Calculator USA',
@@ -18,53 +25,60 @@ const calculators = [
         image: '/images/calc-loan.svg',
     },
     {
-        icon: '💰', title: '401(k) Calculator',
-        description: 'Project your retirement savings with employer matching and see how your 401(k) grows over your career.',
-        path: '/401k-calculator',
-        tags: ['Retirement', '401k', 'Planning'],
-        image: '/images/calc-retirement.svg',
-    },
-    {
-        icon: '📈', title: 'Compound Interest Calculator',
-        description: 'See how your investments grow over time with the magic of compound interest and regular contributions.',
-        path: '/compound-interest-calculator',
-        tags: ['Investing', 'Savings', 'Growth'],
-        image: '/images/calc-compound.svg',
-    },
-    {
-        icon: '🏦', title: 'Loan Payoff Calculator',
-        description: 'Get a complete amortization schedule and find the fastest way to pay off your mortgage or personal loan.',
-        path: '/loan-payoff-calculator',
-        tags: ['Mortgage', 'Debt', 'Amortization'],
-        image: '/images/calc-loan.svg',
-    },
-    {
-        icon: '🏖️', title: 'Retirement Calculator',
-        description: 'Project your retirement nest egg and estimated monthly income based on your savings strategy.',
-        path: '/retirement-calculator',
-        tags: ['Retirement', 'Wealth', 'Planning'],
-        image: '/images/calc-retirement.svg',
-    },
-    {
-        icon: '💹', title: 'Inflation Calculator',
-        description: 'Understand how inflation erodes your purchasing power and plan for rising costs over the years.',
-        path: '/inflation-calculator',
-        tags: ['Inflation', 'Purchasing Power', 'CPI'],
-        image: '/images/calc-inflation.svg',
-    },
-    {
-        icon: '💳', title: 'Credit Card Payoff Calculator',
-        description: 'Plan your path to zero balance and see how much interest you can save.',
+        icon: '💳', title: 'Credit Card Payoff Calculator USA',
+        description: 'Plan your path to zero balance and see how Americans pay off credit card debt faster with smart strategies.',
         path: '/credit-card-payoff-calculator',
         tags: ['Debt', 'Credit Card', 'USA'],
         image: '/images/calc-cc.svg',
     },
     {
-        icon: '⚡', title: 'Debt Snowball Calculator',
+        icon: '⚡', title: 'Debt Snowball Calculator USA',
         description: 'Compare snowball vs. avalanche payoff strategies and find the fastest path to becoming debt-free.',
         path: '/debt-snowball-calculator',
-        tags: ['Debt Free', 'Snowball', 'Avalanche'],
+        tags: ['Debt Free', 'Snowball', 'USA'],
         image: '/images/calc-debt.svg',
+    },
+    {
+        icon: '🏔️', title: 'Debt Avalanche Calculator USA',
+        description: 'Prioritize high-interest balances and save thousands in interest with the mathematically fastest payoff method.',
+        path: '/debt-avalanche-calculator',
+        tags: ['Debt Free', 'Avalanche', 'USA'],
+        image: '/images/calc-debt.svg',
+    },
+    {
+        icon: '📖', title: 'Guide: Pay Off Debt Faster',
+        description: 'A comprehensive guide for Americans on how to eliminate credit card debt using proven methods.',
+        path: '/guides/how-to-pay-off-debt-faster-usa',
+        tags: ['Guide', 'Debt', 'Americans'],
+        image: '/images/calc-loan.svg',
+    },
+    {
+        icon: '🔥', title: 'FIRE Calculator USA',
+        description: 'Find your number for Financial Independence and Early Retirement in the USA.',
+        path: '/fire-calculator',
+        tags: ['Retirement', 'Trending', 'Independence'],
+        image: '/images/calc-fire.svg',
+    },
+    {
+        icon: '📈', title: 'Compound Interest Calculator USA',
+        description: 'See how your investments grow over time with the magic of compound interest and regular contributions.',
+        path: '/compound-interest-calculator',
+        tags: ['Investing', 'Savings', 'USA'],
+        image: '/images/calc-compound.svg',
+    },
+    {
+        icon: '💹', title: 'Inflation Calculator USA',
+        description: 'Understand how inflation erodes your purchasing power in the United States over time.',
+        path: '/inflation-calculator',
+        tags: ['Inflation', 'Purchasing Power', 'USA'],
+        image: '/images/calc-inflation.svg',
+    },
+    {
+        icon: '🏦', title: 'Loan Payoff Calculator',
+        description: 'Get a complete amortization schedule and find the fastest way to pay off any loan.',
+        path: '/loan-payoff-calculator',
+        tags: ['Mortgage', 'Debt', 'Amortization'],
+        image: '/images/calc-loan.svg',
     },
     {
         icon: '📊', title: 'SIP Calculator',
@@ -77,15 +91,8 @@ const calculators = [
         icon: '🚗', title: 'EMI Calculator',
         description: 'Calculate your monthly loan payments for home, car, or personal loans.',
         path: '/emi-calculator',
-        tags: ['Loan', 'EMI', 'India'],
+        tags: ['Loan', 'EMI', 'Finance'],
         image: '/images/calc-emi.svg',
-    },
-    {
-        icon: '🔥', title: 'FIRE Calculator',
-        description: 'Find your number for Financial Independence and Early Retirement.',
-        path: '/fire-calculator',
-        tags: ['Retirement', 'Trending', 'Independence'],
-        image: '/images/calc-fire.svg',
     },
     {
         icon: '🇮🇳', title: 'India Income Tax Calculator',
@@ -162,15 +169,15 @@ export default function Home() {
             <section className="features-section">
                 <div className="section-header">
                     <h2>Why Choose FinanceCalc?</h2>
-                    <p>India's most trusted privacy-first financial toolset.</p>
+                    <p>Accurate, privacy-first financial tools built for Americans.</p>
                 </div>
                 <div className="features-grid">
                     <div className="feature-card">
                         <div className="feature-icon" style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
                             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                         </div>
-                        <h3>Built for Indian Tax Laws</h3>
-                        <p>Our tools are updated with the latest FY 2024-25 and 2025-26 tax regimes, including section 80C, 80D, and HRA rules.</p>
+                        <h3>US Financial Standards</h3>
+                        <p>Our tools are updated with the latest US mortgage standards, 401(k) limits, and inflation data to ensure accuracy for US households.</p>
                     </div>
                     <div className="feature-card">
                         <div className="feature-icon" style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
@@ -198,26 +205,26 @@ export default function Home() {
 
             <section className="seo-content">
                 <div className="container">
-                    <h2>India's Most Accurate Financial Planning Portal</h2>
-                    <p>FinanceCalc is dedicated to providing Indian citizens with the most precise tools for wealth management, retirement planning, and tax optimization. In an era of shifting tax regimes and economic volatility, making decisions based on "gut feeling" is no longer enough. Our platform empowers you with mathematical certainty, whether you're navigating the **New Tax Regime (FY 2025-26)** or planning your first SIP.</p>
+                    <h2>Professional Financial Planning for Americans</h2>
+                    <p>FinanceCalc is dedicated to providing Americans with the most precise tools for wealth management, retirement planning, and debt optimization. In an era of rising costs and economic volatility, making decisions based on "gut feeling" is no longer enough. Our platform empowers <strong>US households</strong> with mathematical certainty, whether you're navigating your first mortgage or planning for early retirement.</p>
 
                     <h3>Why Accurate Financial Calculators Matter</h3>
-                    <p>Even a 0.5% difference in interest rates or a minor misunderstanding of tax slabs can result in a loss of lakhs over a 20-year period. Our calculators are meticulously audited to reflect the latest circulars from the **Income Tax Department of India** and the **GST Council**. We don't just give you a number; we provide a complete roadmap with interactive charts, amortization schedules, and year-by-year wealth breakdowns.</p>
+                    <p>Even a 0.5% difference in mortgage rates or a minor misunderstanding of 401(k) compounding can result in a loss of thousands over a 20-year period. Our calculators are meticulously audited to reflect US financial standards. We don't just give you a number; we provide a complete roadmap with interactive charts, amortization schedules, and year-by-year wealth breakdowns.</p>
 
                     <h3>Comprehensive Coverage for Every Money Goal</h3>
-                    <p>Whether you're looking for an **Income Tax Calculator** to compare regimes, a **GST Calculator** for your business, or a **FIRE Calculator** to plan an early exit from the corporate world, we have you covered. Our suite of tools includes industry-leading projections for:</p>
+                    <p>Whether you're looking for a <strong>Mortgage Calculator with PMI</strong> to see your true monthly cost, or a <strong>FIRE Calculator USA</strong> to plan an early exit from the corporate world, we have you covered. Our suite of tools includes industry-leading projections for:</p>
                     <ul>
-                        <li><strong>Investment Planning:</strong> SIP, Compound Interest, and Lump Sum growth.</li>
-                        <li><strong>Tax & Salary:</strong> New Tax Regime, HRA Exemption, and GST calculations.</li>
-                        <li><strong>Life Stages:</strong> Retirement corpus building and the FIRE movement.</li>
-                        <li><strong>Debt Management:</strong> EMI, Loan Payoff, and Debt Snowball strategies.</li>
+                        <li><strong>Retirement Planning:</strong> 401(k), IRA, and FIRE goals.</li>
+                        <li><strong>Debt Management:</strong> Debt Snowball vs Avalanche, Credit Card Payoff, and Student Loans.</li>
+                        <li><strong>Home Ownership:</strong> Real-time mortgage breakdowns including taxes and insurance.</li>
+                        <li><strong>Wealth Growth:</strong> Compound interest and inflation-adjusted projections.</li>
                     </ul>
 
                     <h3>Privacy-First & Completely Free</h3>
-                    <p>Your financial data is sensitive. Unlike other platforms that require sign-ups and harvest your data for marketing, **FinanceCalc is 100% anonymous**. All calculations happen directly in your browser. No data ever leaves your device, ensuring your financial secrets stay yours. We believe that professional-grade financial planning should be accessible to every Indian, free of charge and free of ads that track you.</p>
+                    <p>Your financial data is sensitive. Unlike other platforms that harvest your data for marketing, <strong>FinanceCalc is 100% anonymous</strong>. All calculations happen directly in your browser. No data ever leaves your device, ensuring your financial secrets stay yours. We believe that professional-grade financial planning should be accessible to every American, free of charge. Higher transparency is what makes us the preferred choice for US financial tracking.</p>
 
-                    <h3>Plan for Every Stage of Life</h3>
-                    <p>Whether you're just starting to invest, buying your first home, planning for retirement, or aggressively paying off debt, our calculators provide the detailed projections and insights you need to make informed decisions. Download your results as a PDF to share with your spouse, financial advisor, or keep for your records.</p>
+                    <h3>Plan for Every Stage of American Life</h3>
+                    <p>Whether you're just starting to invest, buying your first home, planning for retirement, or aggressively paying off debt, our calculators provide the detailed projections and insights you need to make informed decisions. Download your results as a PDF to share with your family, financial advisor, or keep for your records.</p>
                 </div>
             </section>
 

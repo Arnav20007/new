@@ -133,8 +133,8 @@ export default function FIRECalculator() {
     return (
         <div className="calculator-page fire-calculator">
             <SEOHead
-                title="FIRE Calculator – Financial Independence Retire Early | FinanceCalc"
-                description="Calculate your FIRE Number and retirement date. Advanced planner accounting for inflation, multi-stage returns and safe withdrawal rates (3-4% rules)."
+                title="FIRE Calculator USA – Financial Independence Retire Early | FinanceCalc"
+                description="Use the FIRE Calculator USA to plan your early retirement. Advanced tool for Americans tracking expenses and safe withdrawal rates to achieve financial freedom."
                 canonical="/fire-calculator"
                 faqSchema={faqs}
             />

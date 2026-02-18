@@ -66,8 +66,8 @@ export default function CreditCardPayoffCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Credit Card Payoff Calculator USA | FinanceCalc"
-                description="Plan your path to a zero balance and save on interest. Analyze your credit card debt payoff strategy with our accurate loan repayment tool built for US users."
+                title="Credit Card Payoff Calculator USA – Debt Free Faster | FinanceCalc"
+                description="Use our credit card payoff calculator USA to plan your journey to zero balance. Plan how Americans pay off credit card debt faster with smart strategies."
                 canonical="/credit-card-payoff-calculator"
                 faqSchema={faqs}
             />

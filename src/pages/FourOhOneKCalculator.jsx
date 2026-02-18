@@ -88,7 +88,7 @@ export default function FourOhOneKCalculator() {
         <div className="calculator-page">
             <SEOHead
                 title="401(k) Calculator USA – Retirement Savings Planner | FinanceCalc"
-                description="Project your 401(k) balance at retirement with employer matching, salary increases, and investment growth. See how much your nest egg will be worth."
+                description="Project your 401(k) balance at retirement with employer matching, salary increases, and investment growth. Join millions of Americans tracking their retirement wealth."
                 canonical="/401k-calculator"
                 faqSchema={faqs}
             />

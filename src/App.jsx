@@ -12,6 +12,7 @@ const LoanPayoffCalculator = lazy(() => import('./pages/LoanPayoffCalculator'));
 const RetirementCalculator = lazy(() => import('./pages/RetirementCalculator'));
 const InflationCalculator = lazy(() => import('./pages/InflationCalculator'));
 const DebtSnowballCalculator = lazy(() => import('./pages/DebtSnowballCalculator'));
+const DebtAvalancheCalculator = lazy(() => import('./pages/DebtAvalancheCalculator'));
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator'));
 const EMICalculator = lazy(() => import('./pages/EMICalculator'));
 const MortgageCalculator = lazy(() => import('./pages/MortgageCalculator'));
@@ -24,6 +25,7 @@ const HRACalculator = lazy(() => import('./pages/HRACalculator'));
 const FIRECalculator = lazy(() => import('./pages/FIRECalculator'));
 const IncomeTaxGuide = lazy(() => import('./pages/guides/IncomeTaxGuide'));
 const SIPvsFDGuide = lazy(() => import('./pages/guides/SIPvsFDGuide'));
+const HowToPayOffDebtUSA = lazy(() => import('./pages/guides/HowToPayOffDebtUSA'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
@@ -61,6 +63,7 @@ export default function App() {
                   <Route path="/retirement-calculator" element={<RetirementCalculator />} />
                   <Route path="/inflation-calculator" element={<InflationCalculator />} />
                   <Route path="/debt-snowball-calculator" element={<DebtSnowballCalculator />} />
+                  <Route path="/debt-avalanche-calculator" element={<DebtAvalancheCalculator />} />
                   <Route path="/sip-calculator" element={<SIPCalculator />} />
                   <Route path="/emi-calculator" element={<EMICalculator />} />
                   <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
@@ -73,6 +76,7 @@ export default function App() {
                   <Route path="/fire-calculator" element={<FIRECalculator />} />
                   <Route path="/guides/how-to-calculate-income-tax-india" element={<IncomeTaxGuide />} />
                   <Route path="/guides/sip-vs-fd-which-is-better" element={<SIPvsFDGuide />} />
+                  <Route path="/guides/how-to-pay-off-debt-faster-usa" element={<HowToPayOffDebtUSA />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                   <Route path="/disclaimer" element={<Disclaimer />} />

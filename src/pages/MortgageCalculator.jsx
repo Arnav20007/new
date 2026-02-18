@@ -78,8 +78,8 @@ export default function MortgageCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Mortgage Calculator USA – Monthly Payment & Amortization | FinanceCalc"
-                description="Calculate your USA mortgage monthly payment including taxes, insurance, and PMI. Get a full amortization schedule and see how much you can afford."
+                title="Mortgage Calculator with PMI USA – Full Amortization | FinanceCalc"
+                description="USA mortgage monthly payment calculator with PMI, taxes, and insurance. Complete pmi mortgage calculator with monthly breakdown and schedule."
                 canonical="/mortgage-calculator"
                 faqSchema={faqs}
             />
