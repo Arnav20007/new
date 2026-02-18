@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
             </nav>
 
             <h1>Privacy Policy</h1>
-            <p className="last-updated">Last Updated: February 11, 2026</p>
+            <p className="last-updated">Last Updated: February 2026</p>
 
             <p>
                 FinanceCalc ("we," "our," or "us") operates the financecalc.com website (the "Service").

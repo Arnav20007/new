@@ -15,7 +15,7 @@ export default function TermsAndConditions() {
             </nav>
 
             <h1>Terms and Conditions</h1>
-            <p className="last-updated">Last Updated: February 11, 2026</p>
+            <p className="last-updated">Last Updated: February 2026</p>
 
             <p>
                 Please read these Terms and Conditions ("Terms") carefully before using the FinanceCalc

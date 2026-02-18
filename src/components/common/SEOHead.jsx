@@ -13,12 +13,16 @@ export default function SEOHead({
 }) {
     const siteName = 'FinanceCalc';
     const baseUrl = 'https://financecalc1.pythonanywhere.com';
+    const canonicalUrl = `${baseUrl}${canonical || ''}`;
 
     // Ensure title is clean and doesn't duplicate siteName
     const cleanTitle = title.includes(siteName)
         ? title.split(siteName)[0].replace(/[|\-—–]\s*$/, '').trim()
         : title;
-    const fullTitle = `${cleanTitle} | ${siteName}`;
+
+    const fullTitle = cleanTitle === siteName
+        ? siteName
+        : `${cleanTitle} | ${siteName}`;
 
     // Unified Structured Data (@graph)
     const structuredData = {
@@ -48,8 +52,8 @@ export default function SEOHead({
             },
             {
                 '@type': 'WebPage',
-                '@id': `${baseUrl}${canonical}#webpage`,
-                'url': `${baseUrl}${canonical}`,
+                '@id': `${canonicalUrl}#webpage`,
+                'url': canonicalUrl,
                 'name': fullTitle,
                 'description': description,
                 'isPartOf': { '@id': `${baseUrl}/#website` },
@@ -62,7 +66,7 @@ export default function SEOHead({
     if (faqSchema && faqSchema.length > 0) {
         structuredData['@graph'].push({
             '@type': 'FAQPage',
-            '@id': `${baseUrl}${canonical}#faq`,
+            '@id': `${canonicalUrl}#faq`,
             'mainEntity': faqSchema.map(faq => ({
                 '@type': 'Question',
                 'name': faq.question,
@@ -78,13 +82,14 @@ export default function SEOHead({
         <Helmet>
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
-            <link rel="canonical" href={`${baseUrl}${canonical}`} />
+            <link rel="canonical" href={canonicalUrl} />
+            <meta name="robots" content="index, follow" />
 
             {/* Open Graph */}
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:type" content={type} />
-            <meta property="og:url" content={`${baseUrl}${canonical}`} />
+            <meta property="og:url" content={canonicalUrl} />
             <meta property="og:image" content={`${baseUrl}${ogImage}`} />
             <meta property="og:site_name" content={siteName} />
 

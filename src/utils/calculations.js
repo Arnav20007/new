@@ -625,3 +625,139 @@ export function calculateFIRE(currentAge, targetAge, currentSavings, monthlyInve
         timeline
     };
 }
+
+/**
+ * Mortgage Calculator (USA Focused)
+ * @param {number} homePrice - Total purchase price
+ * @param {number} downPayment - Down payment amount
+ * @param {number} rate - Annual interest rate (%)
+ * @param {number} years - Loan term in years
+ * @param {number} propertyTaxRate - Annual property tax rate (%)
+ * @param {number} insurance - Annual home insurance
+ * @param {number} pmiRate - Annual PMI rate (%, usually 0.5-1.5 if down payment < 20%)
+ * @returns {Object} Monthly payment breakdown and amortization
+ */
+export function calculateMortgage(homePrice, downPayment, rate, years, propertyTaxRate, insurance, pmiRate = 0) {
+    const principal = homePrice - downPayment;
+    const r = rate / 12 / 100;
+    const n = Math.max(1, years * 12);
+
+    // Monthly P&I
+    const emi = r > 0
+        ? (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
+        : principal / n;
+
+    // Monthly Taxes
+    const monthlyTax = (homePrice * (propertyTaxRate / 100)) / 12;
+
+    // Monthly Insurance
+    const monthlyInsurance = insurance / 12;
+
+    // Monthly PMI (if down payment < 20% of home price)
+    const downPaymentPercent = (downPayment / homePrice) * 100;
+    const monthlyPMI = (downPaymentPercent < 19.99) ? (principal * (pmiRate / 100)) / 12 : 0;
+
+    const totalMonthlyPayment = emi + monthlyTax + monthlyInsurance + monthlyPMI;
+
+    const schedule = [];
+    let balance = principal;
+    let totalInterest = 0;
+
+    for (let i = 1; i <= n; i++) {
+        const interest = balance * r;
+        const principalPaid = emi - interest;
+        balance -= principalPaid;
+        totalInterest += interest;
+
+        if (i % 12 === 0 || i === n) {
+            schedule.push({
+                year: Math.ceil(i / 12),
+                principalPaid: Math.round(principal - balance),
+                interestPaid: Math.round(totalInterest),
+                remainingBalance: Math.round(Math.max(0, balance))
+            });
+        }
+    }
+
+    return {
+        monthlyPI: Math.round(emi),
+        monthlyTax: Math.round(monthlyTax),
+        monthlyInsurance: Math.round(monthlyInsurance),
+        monthlyPMI: Math.round(monthlyPMI),
+        totalMonthlyPayment: Math.round(totalMonthlyPayment),
+        totalInterest: Math.round(totalInterest),
+        totalCost: Math.round(totalMonthlyPayment * n),
+        principalBalance: principal,
+        schedule
+    };
+}
+
+/**
+ * 401(k) Calculator
+ * @param {number} currentAge
+ * @param {number} retirementAge
+ * @param {number} currentBalance
+ * @param {number} annualSalary
+ * @param {number} contributionPercent - % of salary contributed by employee
+ * @param {number} employerMatch - % of salary matched by employer
+ * @param {number} employerMatchLimit - % of employee contribution matched up to (e.g. 50% of first 6%)
+ * @param {number} expectedReturn - % annual return
+ * @param {number} salaryIncrease - % annual salary growth
+ * @returns {Object} Projection
+ */
+export function calculate401k(currentAge, retirementAge, currentBalance, annualSalary, contributionPercent, employerMatch, employerMatchLimit, expectedReturn, salaryIncrease) {
+    const years = retirementAge - currentAge;
+    if (years <= 0) return { error: 'Retirement age must be greater than current age.' };
+
+    const monthlyRate = expectedReturn / 100 / 12;
+
+    let balance = currentBalance;
+    let currentAnnualSalary = annualSalary;
+    let totalEmployeeContributions = 0;
+    let totalEmployerMatch = 0;
+    const projection = [];
+
+    for (let year = 1; year <= years; year++) {
+        let yearlyInterest = 0;
+        let yearlyEmployeeContrib = 0;
+        let yearlyEmployerContrib = 0;
+
+        for (let month = 1; month <= 12; month++) {
+            const monthlySalary = currentAnnualSalary / 12;
+            const employeeContrib = monthlySalary * (contributionPercent / 100);
+
+            // Employer Match Logic: match % of employee contribution up to limit % of salary
+            const maxMatchableSalary = monthlySalary * (employerMatchLimit / 100);
+            const employeeMatchableContribution = Math.min(employeeContrib, maxMatchableSalary);
+            const employerContrib = employeeMatchableContribution * (employerMatch / 100);
+
+            const interest = balance * monthlyRate;
+            balance += interest + employeeContrib + employerContrib;
+
+            yearlyInterest += interest;
+            yearlyEmployeeContrib += employeeContrib;
+            yearlyEmployerContrib += employerContrib;
+        }
+
+        totalEmployeeContributions += yearlyEmployeeContrib;
+        totalEmployerMatch += yearlyEmployerContrib;
+
+        projection.push({
+            year,
+            age: currentAge + year,
+            balance: Math.round(balance),
+            totalContributions: Math.round(totalEmployeeContributions + totalEmployerMatch),
+            yearlyGrowth: Math.round(yearlyInterest)
+        });
+
+        currentAnnualSalary *= (1 + (salaryIncrease / 100));
+    }
+
+    return {
+        finalBalance: Math.round(balance),
+        totalEmployeeContributions: Math.round(totalEmployeeContributions),
+        totalEmployerMatch: Math.round(totalEmployerMatch),
+        totalGrowth: Math.round(balance - (currentBalance || 0) - totalEmployeeContributions - totalEmployerMatch),
+        projection
+    };
+}

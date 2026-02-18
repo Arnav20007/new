@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 
 const calculatorLinks = [
+    { path: '/mortgage-calculator', label: 'Mortgage Calculator USA' },
+    { path: '/401k-calculator', label: '401(k) Calculator' },
+    { path: '/retirement-calculator', label: 'Retirement & Roth IRA' },
     { path: '/compound-interest-calculator', label: 'Compound Interest' },
     { path: '/loan-payoff-calculator', label: 'Loan Payoff' },
-    { path: '/retirement-calculator', label: 'Retirement' },
-    { path: '/sip-calculator', label: 'SIP Calculator India' },
-    { path: '/emi-calculator', label: 'EMI Calculator India' },
-    { path: '/india-tax-calculator', label: 'India Tax Calculator' },
-    { path: '/gst-calculator', label: 'GST Calculator India' },
-    { path: '/hra-calculator', label: 'HRA Calculator India' },
-    { path: '/fire-calculator', label: 'FIRE Calculator India' },
+    { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff USA' },
+    { path: '/sip-calculator', label: 'SIP Calculator' },
+    { path: '/emi-calculator', label: 'EMI Calculator' },
 ];
 
 /**

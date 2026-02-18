@@ -4,6 +4,27 @@ import AdSlot from '../components/common/AdSlot';
 
 const calculators = [
     {
+        icon: '🏠', title: 'Mortgage Calculator USA',
+        description: 'Calculate your monthly mortgage payments including taxes, insurance, and interest. Includes full amortization schedule.',
+        path: '/mortgage-calculator',
+        tags: ['Home Loan', 'Mortgage', 'USA'],
+        image: '/images/calc-emi.svg',
+    },
+    {
+        icon: '🎓', title: 'Student Loan Calculator USA',
+        description: 'Plan your student loan repayment and see how much interest you can save with extra payments.',
+        path: '/student-loan-calculator',
+        tags: ['Loans', 'Education', 'USA'],
+        image: '/images/calc-loan.svg',
+    },
+    {
+        icon: '💰', title: '401(k) Calculator',
+        description: 'Project your retirement savings with employer matching and see how your 401(k) grows over your career.',
+        path: '/401k-calculator',
+        tags: ['Retirement', '401k', 'Planning'],
+        image: '/images/calc-retirement.svg',
+    },
+    {
         icon: '📈', title: 'Compound Interest Calculator',
         description: 'See how your investments grow over time with the magic of compound interest and regular contributions.',
         path: '/compound-interest-calculator',
@@ -21,7 +42,7 @@ const calculators = [
         icon: '🏖️', title: 'Retirement Calculator',
         description: 'Project your retirement nest egg and estimated monthly income based on your savings strategy.',
         path: '/retirement-calculator',
-        tags: ['Retirement', '401K', 'Planning'],
+        tags: ['Retirement', 'Wealth', 'Planning'],
         image: '/images/calc-retirement.svg',
     },
     {
@@ -30,6 +51,13 @@ const calculators = [
         path: '/inflation-calculator',
         tags: ['Inflation', 'Purchasing Power', 'CPI'],
         image: '/images/calc-inflation.svg',
+    },
+    {
+        icon: '💳', title: 'Credit Card Payoff Calculator',
+        description: 'Plan your path to zero balance and see how much interest you can save.',
+        path: '/credit-card-payoff-calculator',
+        tags: ['Debt', 'Credit Card', 'USA'],
+        image: '/images/calc-cc.svg',
     },
     {
         icon: '⚡', title: 'Debt Snowball Calculator',
@@ -49,8 +77,15 @@ const calculators = [
         icon: '🚗', title: 'EMI Calculator',
         description: 'Calculate your monthly loan payments for home, car, or personal loans.',
         path: '/emi-calculator',
-        tags: ['Loan', 'EMI', 'Mortgage'],
+        tags: ['Loan', 'EMI', 'India'],
         image: '/images/calc-emi.svg',
+    },
+    {
+        icon: '🔥', title: 'FIRE Calculator',
+        description: 'Find your number for Financial Independence and Early Retirement.',
+        path: '/fire-calculator',
+        tags: ['Retirement', 'Trending', 'Independence'],
+        image: '/images/calc-fire.svg',
     },
     {
         icon: '🇮🇳', title: 'India Income Tax Calculator',
@@ -59,53 +94,25 @@ const calculators = [
         tags: ['Tax', 'Income Tax', 'India'],
         image: '/images/calc-tax.svg',
     },
-    {
-        icon: '💳', title: 'Credit Card Payoff Calculator',
-        description: 'Plan your path to zero balance and see how much interest you can save.',
-        path: '/credit-card-payoff-calculator',
-        tags: ['Debt', 'Credit Card', 'Finance'],
-        image: '/images/calc-cc.svg',
-    },
-    {
-        icon: '💼', title: 'GST Calculator',
-        description: 'Calculate GST inclusive and exclusive amounts for goods and services in India.',
-        path: '/gst-calculator',
-        tags: ['Business', 'Tax', 'GST'],
-        image: '/images/calc-gst.svg',
-    },
-    {
-        icon: '🔥', title: 'FIRE Calculator',
-        description: 'Find your number for Financial Independence and Early Retirement in India.',
-        path: '/fire-calculator',
-        tags: ['Retirement', 'Trending', 'Independence'],
-        image: '/images/calc-fire.svg',
-    },
-    {
-        icon: '🏠', title: 'HRA Calculator',
-        description: 'Calculate your House Rent Allowance tax exemption based on Indian income tax rules.',
-        path: '/hra-calculator',
-        tags: ['Tax', 'Salary', 'India'],
-        image: '/images/calc-hra.svg',
-    },
 ];
 
 export default function Home() {
     return (
         <div className="home-page">
             <SEOHead
-                title="FinanceCalc – Professional Financial Calculators for India"
-                description="Accurate tax, SIP, EMI & retirement tools built for Indian users. 100% free, privacy-first, and mobile-friendly financial planning."
+                title="FinanceCalc – Professional Financial Calculators USA"
+                description="Accurate retirement, mortgage, 401k & investment tools built for US users. 100% free, privacy-first, and mobile-friendly financial planning."
                 canonical="/"
             />
 
             <section className="home-hero">
                 <div className="hero-content">
-                    <h1>FinanceCalc – Professional<br />Financial Calculators for India</h1>
-                    <p>Accurate tax, SIP, EMI & retirement tools built for Indian users. Make smarter money decisions with precision projections.</p>
+                    <h1>FinanceCalc – Professional<br />Financial Calculators USA</h1>
+                    <p>Accurate 401(k), Mortgage, and Retirement tools built for precision. Make smarter money decisions with advanced financial projections.</p>
                     <div className="trust-badges">
                         <div className="trust-badge">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                            Built for India
+                            US Focused
                         </div>
                         <div className="trust-badge">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
@@ -124,8 +131,8 @@ export default function Home() {
 
             <section className="calculators-section">
                 <div className="section-header">
-                    <h2>India-Specific Financial Tools</h2>
-                    <p>Plan your investments and taxes with tools designed for Indian financial laws.</p>
+                    <h2>Advanced Financial Tools</h2>
+                    <p>Plan your retirement, home purchase, and wealth growth with professional-grade analysis.</p>
                 </div>
                 <div className="calc-grid">
                     {calculators.map(calc => (
@@ -150,6 +157,7 @@ export default function Home() {
                     ))}
                 </div>
             </section>
+
 
             <section className="features-section">
                 <div className="section-header">

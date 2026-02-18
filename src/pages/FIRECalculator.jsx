@@ -20,7 +20,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 const faqs = [
     { question: 'What is FIRE?', answer: 'FIRE stands for Financial Independence, Retire Early. It is a movement dedicated to a program of extreme savings and investment that allows proponents to retire far earlier than traditional budgets and retirement plans would permit.' },
     { question: 'What is my FIRE Number?', answer: 'Your FIRE Number is the total amount of invested assets you need to support your lifestyle without ever having to work again. A common rule of thumb is 25 to 33 times your annual expenses.' },
-    { question: 'What is the Safe Withdrawal Rate (SWR)?', answer: 'The SWR is the percentage of your retirement corpus you can withdraw each year without running out of money. While 4% is common in the US, many experts recommend 3% for India due to higher inflation.' },
+    { question: 'What is the Safe Withdrawal Rate (SWR)?', answer: 'The SWR is the percentage of your retirement corpus you can withdraw each year without running out of money. While the 4% rule is a common standard, some experts recommend a more conservative 3.5% if you plan for a retirement longer than 30 years.' },
     { question: 'Do I need to stop working after reaching FIRE?', answer: 'No! FIRE is about having the *choice* to work. Many people who reach FIRE continue to work on passion projects, freelance, or start businesses because they no longer need the paycheck.' },
     { question: 'How does inflation affect FIRE?', answer: 'Inflation reduces the purchasing power of your money. Your FIRE plan must account for rising costs by ensuring your investments grow faster than inflation and your withdrawal rate remains sustainable.' },
 ];
@@ -133,8 +133,8 @@ export default function FIRECalculator() {
     return (
         <div className="calculator-page fire-calculator">
             <SEOHead
-                title="FIRE Calculator India – Retire Early Planner | FinanceCalc"
-                description="Calculate your FIRE Number and retirement date. Advanced planner accounting for Indian inflation, multi-stage returns and life expectancy."
+                title="FIRE Calculator – Financial Independence Retire Early | FinanceCalc"
+                description="Calculate your FIRE Number and retirement date. Advanced planner accounting for inflation, multi-stage returns and safe withdrawal rates (3-4% rules)."
                 canonical="/fire-calculator"
                 faqSchema={faqs}
             />
@@ -272,16 +272,16 @@ export default function FIRECalculator() {
             <section className="seo-content" id="seo">
                 <div className="container">
                     <h2>How to Achieve Financial Independence & Retire Early (FIRE)</h2>
-                    <p>The **FIRE movement** (Financial Independence, Retire Early) has gained massive traction in India as young professionals seek to escape the 9-to-5 grind and gain control over their time. Achieving FIRE isn't just about quitting work; it's about building a corpus large enough that its returns can support your lifestyle for the rest of your life.</p>
+                    <p>The **FIRE movement** (Financial Independence, Retire Early) has gained massive traction as individuals seek to escape the 9-to-5 grind and gain control over their time. Achieving FIRE isn't just about quitting work; it's about building a corpus large enough that its returns can support your lifestyle for the rest of your life.</p>
 
                     <h3>What is the FIRE Number?</h3>
-                    <p>Your FIRE Number is the target amount of invested capital you need to reach before you can safely retire. A traditionally accepted benchmark is the **25X Rule**, which suggests you need 25 times your annual expenses. However, in India, where inflation is higher (around 6-7%), many experts recommend aiming for **30X to 40X** of your annual expenses to ensure long-term sustainability.</p>
+                    <p>Your FIRE Number is the target amount of invested capital you need to reach before you can safely retire. A traditionally accepted benchmark is the **25X Rule**, which suggests you need 25 times your annual expenses. However, many experts recommend aiming for **30X to 33X** of your annual expenses to ensure long-term sustainability and account for potential market downturns.</p>
 
                     <h3>Key Pillars of a Strong FIRE Plan</h3>
                     <ul>
                         <li><strong>Aggressive Savings Rate:</strong> Most FIRE proponents aim to save 50% to 70% of their monthly income during the accumulation phase.</li>
                         <li><strong>Low-Cost Index Funds:</strong> Investing in diversified index funds or ETFs to capture market growth while minimizing fees.</li>
-                        <li><strong>The 3% Safe Withdrawal Rate (SWR):</strong> While the 4% rule is popular in the US, a 3% SWR is generally considered safer for the Indian context to account for market volatility and persistent inflation.</li>
+                        <li><strong>The Safe Withdrawal Rate (SWR):</strong> The 4% rule is a popular benchmark, but a 3.5% SWR is often considered safer for those planning for a retirement that could span 40-50 years.</li>
                         <li><strong>Emergency Fund & Health Insurance:</strong> Essential buffers to ensure your retirement corpus isn't drained by unexpected medical or life events.</li>
                     </ul>
 

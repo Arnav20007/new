@@ -14,6 +14,9 @@ const InflationCalculator = lazy(() => import('./pages/InflationCalculator'));
 const DebtSnowballCalculator = lazy(() => import('./pages/DebtSnowballCalculator'));
 const SIPCalculator = lazy(() => import('./pages/SIPCalculator'));
 const EMICalculator = lazy(() => import('./pages/EMICalculator'));
+const MortgageCalculator = lazy(() => import('./pages/MortgageCalculator'));
+const FourOhOneKCalculator = lazy(() => import('./pages/FourOhOneKCalculator'));
+const StudentLoanCalculator = lazy(() => import('./pages/StudentLoanCalculator'));
 const IndiaTaxCalculator = lazy(() => import('./pages/IndiaTaxCalculator'));
 const CreditCardPayoffCalculator = lazy(() => import('./pages/CreditCardPayoffCalculator'));
 const GSTCalculator = lazy(() => import('./pages/GSTCalculator'));
@@ -60,6 +63,9 @@ export default function App() {
                   <Route path="/debt-snowball-calculator" element={<DebtSnowballCalculator />} />
                   <Route path="/sip-calculator" element={<SIPCalculator />} />
                   <Route path="/emi-calculator" element={<EMICalculator />} />
+                  <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
+                  <Route path="/401k-calculator" element={<FourOhOneKCalculator />} />
+                  <Route path="/student-loan-calculator" element={<StudentLoanCalculator />} />
                   <Route path="/india-tax-calculator" element={<IndiaTaxCalculator />} />
                   <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
                   <Route path="/gst-calculator" element={<GSTCalculator />} />

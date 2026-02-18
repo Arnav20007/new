@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
 const allCalculators = [
-    { path: '/sip-calculator', name: 'SIP Calculator India', desc: 'Estimate future wealth from your mutual fund SIP.' },
-    { path: '/emi-calculator', name: 'EMI Calculator India', desc: 'Calculate monthly payments for Home or Car loans.' },
-    { path: '/india-tax-calculator', name: 'India Tax Calculator', desc: 'Compare New vs Old tax regimes for 2024-25.' },
-    { path: '/hra-calculator', name: 'HRA Calculator India', desc: 'Calculate your house rent tax exemption.' },
-    { path: '/fire-calculator', name: 'FIRE Calculator India', desc: 'Plan your early retirement and financial freedom.' },
-    { path: '/gst-calculator', name: 'GST Calculator India', desc: 'Quickly calculate GST inclusive and exclusive prices.' },
+    { path: '/mortgage-calculator', name: 'Mortgage Calculator USA', desc: 'Calculate PITI payments and see your amortization schedule.' },
+    { path: '/401k-calculator', name: '401(k) Calculator USA', desc: 'Optimize your retirement savings with employer matching.' },
+    { path: '/retirement-calculator', name: 'Retirement & Roth IRA', desc: 'Plan your long-term wealth and safe withdrawal strategy.' },
+    { path: '/compound-interest-calculator', name: 'Compound Interest', desc: 'See how regular investments grow over time.' },
+    { path: '/credit-card-payoff-calculator', name: 'Credit Card Payoff', desc: 'Find the fastest way to become debt-free.' },
+    { path: '/inflation-calculator', name: 'Inflation Calculator', desc: 'See how inflation impacts your future purchasing power.' },
 ];
 
 /**
