@@ -16,6 +16,7 @@ import { calculateDebtSnowball } from '../utils/calculations';
 import { formatMonthsToYears } from '../utils/formatters';
 import { generatePDF } from '../utils/pdfGenerator';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
@@ -23,7 +24,7 @@ const faqs = [
     { question: 'What is the debt avalanche method?', answer: 'The debt avalanche method (also called debt stacking) focuses on paying off debts with the highest interest rates first, regardless of balance. While this approach saves more money in total interest, it may take longer to see your first debt fully paid off, which can be less motivating for some people.' },
     { question: 'What is the debt snowball method?', answer: 'The debt snowball method involves listing your debts from smallest to largest balance, making minimum payments on all debts, and putting any extra money toward the smallest debt first. When the smallest debt is paid off, its minimum payment "rolls" into the next smallest debt, creating a snowball effect. This method prioritizes psychological wins to keep you motivated.' },
     { question: 'Which is better — snowball or avalanche?', answer: 'Mathematically, the avalanche method always saves more in interest. However, behavioral research shows that the psychological boost from paying off small debts quickly (snowball) helps many people stay committed to their payoff plan. The best method is the one you\'ll stick with. Our calculator shows both so you can compare.' },
-    { question: 'How much extra should I put toward debt?', answer: 'Any extra amount helps, but a common guideline is to use the 50/30/20 budget rule: 50% for needs, 30% for wants, and 20% for savings and debt repayment. If you\'re aggressively paying off debt, you might temporarily shift to 50/20/30 (allocating more to debt). Even an extra $100/month can save thousands in interest.' },
+    { question: 'How much extra should I put toward debt?', answer: 'Any extra amount helps, but a common guideline is to use the 50/30/20 budget rule: 50% for needs, 30% for wants, and 20% for savings and debt repayment. If you\'re aggressively paying off debt, you might temporarily shift to 50/20/30 (allocating more to debt). Even an extra $100/month can save thoGlobalnds in interest.' },
     { question: 'Should I pay off debt or invest?', answer: 'Generally, if your debt interest rate is higher than your expected investment return, prioritize debt payoff. For example, paying off a 20% credit card is equivalent to earning a guaranteed 20% return. However, always contribute enough to get any employer 401(k) match first (it\'s free money). For low-interest debt (under 5%), investing may be more beneficial long-term.' },
 ];
 
@@ -133,8 +134,8 @@ export default function DebtAvalancheCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Debt Avalanche Calculator USA – Save on Interest | FinanceCalc"
-                description="Use the Debt Avalanche Calculator USA to pay off high-interest credit card debt faster. Join millions of Americans saving thousands in interest."
+                title="Debt Avalanche Calculator Global – Save on Interest | FinanceCalc"
+                description="Use the Debt Avalanche Calculator Global to pay off high-interest credit card debt faster. Join millions of Global finance learners saving thoGlobalnds in interest."
                 canonical="/debt-avalanche-calculator"
                 faqSchema={faqs}
             />
@@ -144,10 +145,10 @@ export default function DebtAvalancheCalculator() {
             </nav>
 
             <section className="calculator-hero">
-                <h1>Debt Avalanche Calculator USA</h1>
+                <h1>Debt Avalanche Calculator Global</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Mathematical Optimization.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Mathematical Optimization.
                 </div>
                 <p className="hero-subtitle">
                     The mathematically fastest way to eliminate debt. Prioritize higher interest rates and save more money.
@@ -250,18 +251,23 @@ export default function DebtAvalancheCalculator() {
             <InternalLinks currentPath="/debt-avalanche-calculator" />
 
             <section className="seo-content">
-                <h2>Debt Avalanche vs Snowball — Which is Better for Americans?</h2>
+                <h2>Debt Avalanche vs Snowball — Which is Better ?</h2>
                 <p>The **Debt Avalanche method** is the mathematically superior way to pay off debt. By prioritizing accounts with the highest interest rates first, you minimize the amount of interest that accrues over time. This is particularly effective for **credit card debt in the US**, where interest rates can often exceed 20-30%.</p>
 
-                <h2>How Americans Pay Off Debt Faster</h2>
-                <p>In the United States, <strong>US households carry an average of $6,000 credit card debt</strong>. For those with multiple high-interest cards, the Debt Avalanche provides a logical path to freedom. While the Debt Snowball offers psychological wins, the Avalanche offers financial efficiency. **Americans use this method** when they are strictly focused on saving the most money and finishing their debt-free journey in the shortest time possible.</p>
+                <h2>How Global finance learners Pay Off Debt Faster</h2>
+                <p>In the United States, <strong>students, families, and everyday users who want smarter financial decisions carry an average of $6,000 credit card debt</strong>. For those with multiple high-interest cards, the Debt Avalanche provides a logical path to freedom. While the Debt Snowball offers psychological wins, the Avalanche offers financial efficiency. **Global finance learners use this method** when they are strictly focused on saving the most money and finishing their debt-free journey in the shortest time possible.</p>
 
                 <h2>Average US Credit Card Debt Statistics</h2>
-                <p>According to recent reports, total US household debt has hit record highs. However, by using a logical **debt avalanche calculator USA**, you can take control. Most **Americans** who successfully pay off large balances do so by being intentional with every dollar and choosing a strategy that fits their financial goals.</p>
+                <p>According to recent reports, total US household debt has hit record highs. However, by using a logical **debt avalanche calculator Global**, you can take control. Most **Global finance learners** who successfully pay off large balances do so by being intentional with every dollar and choosing a strategy that fits their financial goals.</p>
             </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/debt-avalanche-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+
+

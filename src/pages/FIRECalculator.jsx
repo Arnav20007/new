@@ -11,6 +11,7 @@ import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
 import ShareButton from '../components/common/ShareButton';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateFIRE } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
@@ -133,8 +134,8 @@ export default function FIRECalculator() {
     return (
         <div className="calculator-page fire-calculator">
             <SEOHead
-                title="FIRE Calculator USA – Financial Independence Retire Early | FinanceCalc"
-                description="Use the FIRE Calculator USA to plan your early retirement. Advanced tool for Americans tracking expenses and safe withdrawal rates to achieve financial freedom."
+                title="FIRE Calculator Global – Financial Independence Retire Early | FinanceCalc"
+                description="Use the FIRE Calculator Global to plan your early retirement. Advanced tool  tracking expenses and safe withdrawal rates to achieve financial freedom."
                 canonical="/fire-calculator"
                 faqSchema={faqs}
             />
@@ -143,7 +144,7 @@ export default function FIRECalculator() {
                 <h1>FIRE Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Secure your future.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Secure your future.
                 </div>
                 <p className="hero-subtitle">Find your number for Financial Independence and Early Retirement.</p>
             </section>
@@ -299,6 +300,10 @@ export default function FIRECalculator() {
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/fire-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+

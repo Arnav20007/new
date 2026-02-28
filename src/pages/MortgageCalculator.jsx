@@ -11,6 +11,7 @@ import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
 import { useCurrency } from '../context/CurrencyContext';
+import AuthorSources from '../components/common/AuthorSources';
 import { calculateMortgage } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
 
@@ -78,17 +79,17 @@ export default function MortgageCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Mortgage Calculator with PMI USA – Full Amortization | FinanceCalc"
-                description="USA mortgage monthly payment calculator with PMI, taxes, and insurance. Complete pmi mortgage calculator with monthly breakdown and schedule."
+                title="Mortgage Calculator with PMI Global – Full Amortization | FinanceCalc"
+                description="Global mortgage monthly payment calculator with PMI, taxes, and insurance. Complete pmi mortgage calculator with monthly breakdown and schedule."
                 canonical="/mortgage-calculator"
                 faqSchema={faqs}
             />
-            <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Mortgage Calculator USA</span></nav>
+            <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Mortgage Calculator Global</span></nav>
             <section className="calculator-hero">
-                <h1>Mortgage Calculator USA</h1>
+                <h1>Mortgage Calculator Global</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — US Real Estate Standards.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — US Real Estate Standards.
                 </div>
                 <p className="hero-subtitle">Estimate your monthly mortgage payments with taxes, insurance, and interest breakdown.</p>
             </section>
@@ -186,8 +187,8 @@ export default function MortgageCalculator() {
 
             <section className="seo-content" id="seo">
                 <div className="container">
-                    <h2>Understanding Your Mortgage Payment in the USA</h2>
-                    <p>Buying a home is one of the most significant financial decisions you'll ever make. Understanding how your monthly payment is calculated is key to ensuring you can afford your home long-term. In the USA, a mortgage payment is typically more than just the repayment of the loan; it includes taxes and insurance as well.</p>
+                    <h2>Understanding Your Mortgage Payment in the Global</h2>
+                    <p>Buying a home is one of the most significant financial decisions you'll ever make. Understanding how your monthly payment is calculated is key to ensuring you can afford your home long-term. In the Global, a mortgage payment is typically more than just the repayment of the loan; it includes taxes and insurance as well.</p>
 
                     <h3>What makes up a Monthly Mortgage Payment? (PITI)</h3>
                     <p>PITI stands for Principal, Interest, Taxes, and Insurance. These are the four main components of a monthly mortgage payment:</p>
@@ -208,6 +209,10 @@ export default function MortgageCalculator() {
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/mortgage-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+

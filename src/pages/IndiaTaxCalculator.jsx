@@ -9,6 +9,7 @@ import FAQSection from '../components/common/FAQSection';
 import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateIndiaTax } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
@@ -69,7 +70,7 @@ export default function IndiaTaxCalculator() {
                 <h1>Income Tax Calculator (India)</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — based on latest Indian tax rules.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — based on latest Indian tax rules.
                 </div>
                 <p className="hero-subtitle">Calculate your tax liability under the New Tax Regime for FY 2024-25 (AY 2025-26).</p>
             </section>
@@ -157,7 +158,9 @@ export default function IndiaTaxCalculator() {
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/india-tax-calculator" />
+            <AuthorSources />
 
         </div>
     );
 }
+

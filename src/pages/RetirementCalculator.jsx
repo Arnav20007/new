@@ -13,6 +13,7 @@ import AdSlot from '../components/common/AdSlot';
 import ShareButton from '../components/common/ShareButton';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateRetirement } from '../utils/calculations';
 import { generatePDF } from '../utils/pdfGenerator';
@@ -141,8 +142,8 @@ export default function RetirementCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Retirement & Roth IRA Calculator USA – Plan Your Nest Egg | FinanceCalc"
-                description="Calculate how much you need to retire comfortably in the USA. Projections for Roth IRA, Traditional IRA, and general retirement savings with compound interest."
+                title="Retirement & Roth IRA Calculator Global – Plan Your Nest Egg | FinanceCalc"
+                description="Calculate how much you need to retire comfortably in the Global. Projections for Roth IRA, Traditional IRA, and general retirement savings with compound interest."
                 canonical="/retirement-calculator"
                 faqSchema={faqs}
             />
@@ -151,7 +152,7 @@ export default function RetirementCalculator() {
                 <h1>Retirement & Roth IRA Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Plan your nest egg.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Plan your nest egg.
                 </div>
                 <p className="hero-subtitle">Project your retirement nest egg and estimate your future monthly income. Start planning your financial independence today.</p>
             </section>
@@ -259,7 +260,7 @@ export default function RetirementCalculator() {
                 <p>However, many modern advisors suggest a more conservative approach (3% to 3.5%) if you plan on an early retirement or if market conditions are volatile at the start of your retirement years.</p>
 
                 <h3>The Power of Tax-Advantaged Accounts</h3>
-                <p>Where you save is just as important as how much you save. Using the right "buckets" can save you hundreds of thousands of dollars in taxes over your career:</p>
+                <p>Where you save is just as important as how much you save. Using the right "buckets" can save you hundreds of thoGlobalnds of dollars in taxes over your career:</p>
                 <ul>
                     <li><strong>401(k) / 403(b):</strong> These are employer-sponsored plans. The biggest advantage is the <strong>Employer Match</strong> — if your employer offers a match, it is effectively a 100% immediate return on your investment. Always contribute at least enough to get the full match.</li>
                     <li><strong>Traditional IRA:</strong> Contributions may be tax-deductible today, lowering your taxable income. You pay taxes later when you withdraw the money in retirement.</li>
@@ -292,6 +293,10 @@ export default function RetirementCalculator() {
             <FAQSection faqs={faqs} />
 
             <TryNextCalculator currentPath="/retirement-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+

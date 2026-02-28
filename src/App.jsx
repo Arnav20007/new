@@ -25,10 +25,11 @@ const HRACalculator = lazy(() => import('./pages/HRACalculator'));
 const FIRECalculator = lazy(() => import('./pages/FIRECalculator'));
 const IncomeTaxGuide = lazy(() => import('./pages/guides/IncomeTaxGuide'));
 const SIPvsFDGuide = lazy(() => import('./pages/guides/SIPvsFDGuide'));
-const HowToPayOffDebtUSA = lazy(() => import('./pages/guides/HowToPayOffDebtUSA'));
+const HowToPayOffDebtGlobal = lazy(() => import('./pages/guides/HowToPayOffDebtGlobal'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function PageLoader() {
   return (
@@ -76,10 +77,11 @@ export default function App() {
                   <Route path="/fire-calculator" element={<FIRECalculator />} />
                   <Route path="/guides/how-to-calculate-income-tax-india" element={<IncomeTaxGuide />} />
                   <Route path="/guides/sip-vs-fd-which-is-better" element={<SIPvsFDGuide />} />
-                  <Route path="/guides/how-to-pay-off-debt-faster-usa" element={<HowToPayOffDebtUSA />} />
+                  <Route path="/guides/how-to-pay-off-debt-faster-Global" element={<HowToPayOffDebtGlobal />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                   <Route path="/disclaimer" element={<Disclaimer />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={
                     <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
                       <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>404</h1>
@@ -105,3 +107,4 @@ export default function App() {
     </ThemeProvider>
   );
 }
+

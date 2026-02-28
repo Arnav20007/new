@@ -7,70 +7,70 @@ const calculators = [
         icon: '🏠', title: 'Mortgage Calculator with PMI',
         description: 'Calculate your monthly mortgage payments including taxes, insurance, and PMI. Complete amortization schedule.',
         path: '/mortgage-calculator',
-        tags: ['Home Loan', 'Mortgage', 'USA'],
+        tags: ['Home Loan', 'Mortgage', 'Global'],
         image: '/images/calc-emi.svg',
     },
     {
-        icon: '💰', title: '401(k) Calculator USA',
+        icon: '💰', title: '401(k) Calculator Global',
         description: 'Project your retirement savings with employer matching and see how your 401(k) grows over your career.',
         path: '/401k-calculator',
         tags: ['Retirement', '401k', 'Planning'],
         image: '/images/calc-retirement.svg',
     },
     {
-        icon: '🎓', title: 'Student Loan Calculator USA',
+        icon: '🎓', title: 'Student Loan Calculator Global',
         description: 'Plan your student loan repayment and see how much interest you can save with extra payments.',
         path: '/student-loan-calculator',
-        tags: ['Loans', 'Education', 'USA'],
+        tags: ['Loans', 'Education', 'Global'],
         image: '/images/calc-loan.svg',
     },
     {
-        icon: '💳', title: 'Credit Card Payoff Calculator USA',
-        description: 'Plan your path to zero balance and see how Americans pay off credit card debt faster with smart strategies.',
+        icon: '💳', title: 'Credit Card Payoff Calculator Global',
+        description: 'Plan your path to zero balance and see how Global finance learners pay off credit card debt faster with smart strategies.',
         path: '/credit-card-payoff-calculator',
-        tags: ['Debt', 'Credit Card', 'USA'],
+        tags: ['Debt', 'Credit Card', 'Global'],
         image: '/images/calc-cc.svg',
     },
     {
-        icon: '⚡', title: 'Debt Snowball Calculator USA',
+        icon: '⚡', title: 'Debt Snowball Calculator Global',
         description: 'Compare snowball vs. avalanche payoff strategies and find the fastest path to becoming debt-free.',
         path: '/debt-snowball-calculator',
-        tags: ['Debt Free', 'Snowball', 'USA'],
+        tags: ['Debt Free', 'Snowball', 'Global'],
         image: '/images/calc-debt.svg',
     },
     {
-        icon: '🏔️', title: 'Debt Avalanche Calculator USA',
-        description: 'Prioritize high-interest balances and save thousands in interest with the mathematically fastest payoff method.',
+        icon: '🏔️', title: 'Debt Avalanche Calculator Global',
+        description: 'Prioritize high-interest balances and save thoGlobalnds in interest with the mathematically fastest payoff method.',
         path: '/debt-avalanche-calculator',
-        tags: ['Debt Free', 'Avalanche', 'USA'],
+        tags: ['Debt Free', 'Avalanche', 'Global'],
         image: '/images/calc-debt.svg',
     },
     {
         icon: '📖', title: 'Guide: Pay Off Debt Faster',
-        description: 'A comprehensive guide for Americans on how to eliminate credit card debt using proven methods.',
-        path: '/guides/how-to-pay-off-debt-faster-usa',
-        tags: ['Guide', 'Debt', 'Americans'],
+        description: 'A comprehensive guide  on how to eliminate credit card debt using proven methods.',
+        path: '/guides/how-to-pay-off-debt-faster-Global',
+        tags: ['Guide', 'Debt', 'Global finance learners'],
         image: '/images/calc-loan.svg',
     },
     {
-        icon: '🔥', title: 'FIRE Calculator USA',
-        description: 'Find your number for Financial Independence and Early Retirement in the USA.',
+        icon: '🔥', title: 'FIRE Calculator Global',
+        description: 'Find your number for Financial Independence and Early Retirement in the Global.',
         path: '/fire-calculator',
         tags: ['Retirement', 'Trending', 'Independence'],
         image: '/images/calc-fire.svg',
     },
     {
-        icon: '📈', title: 'Compound Interest Calculator USA',
+        icon: '📈', title: 'Compound Interest Calculator Global',
         description: 'See how your investments grow over time with the magic of compound interest and regular contributions.',
         path: '/compound-interest-calculator',
-        tags: ['Investing', 'Savings', 'USA'],
+        tags: ['Investing', 'Savings', 'Global'],
         image: '/images/calc-compound.svg',
     },
     {
-        icon: '💹', title: 'Inflation Calculator USA',
+        icon: '💹', title: 'Inflation Calculator Global',
         description: 'Understand how inflation erodes your purchasing power in the United States over time.',
         path: '/inflation-calculator',
-        tags: ['Inflation', 'Purchasing Power', 'USA'],
+        tags: ['Inflation', 'Purchasing Power', 'Global'],
         image: '/images/calc-inflation.svg',
     },
     {
@@ -107,19 +107,19 @@ export default function Home() {
     return (
         <div className="home-page">
             <SEOHead
-                title="FinanceCalc – Professional Financial Calculators USA"
-                description="Accurate retirement, mortgage, 401k & investment tools built for US users. 100% free, privacy-first, and mobile-friendly financial planning."
+                title="FinanceCalc – Free Privacy-First Financial Calculators"
+                description="Free privacy-first financial calculators for students, families, and everyday users. Make smarter money decisions with clear projections and transparent formulas."
                 canonical="/"
             />
 
             <section className="home-hero">
                 <div className="hero-content">
-                    <h1>FinanceCalc – Professional<br />Financial Calculators USA</h1>
-                    <p>Accurate 401(k), Mortgage, and Retirement tools built for precision. Make smarter money decisions with advanced financial projections.</p>
+                    <h1>Free Privacy-First<br />Financial Calculators</h1>
+                    <p>Free privacy-first financial calculators for students, families, and everyday users. Make smarter money decisions with clear projections and transparent formulas.</p>
                     <div className="trust-badges">
                         <div className="trust-badge">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                            US Focused
+                            Indian Focused
                         </div>
                         <div className="trust-badge">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
@@ -149,7 +149,7 @@ export default function Home() {
                             </div>
                             <div className="calc-card-body">
                                 <h3>{calc.title}</h3>
-                                <p>{calc.description}</p>
+                                <p>{calc.description.replace('Global finance learners', 'users')}</p>
                                 <div className="calc-card-tags">
                                     {calc.tags.map(tag => (
                                         <span key={tag} className="calc-tag">{tag}</span>
@@ -169,15 +169,15 @@ export default function Home() {
             <section className="features-section">
                 <div className="section-header">
                     <h2>Why Choose FinanceCalc?</h2>
-                    <p>Accurate, privacy-first financial tools built for Americans.</p>
+                    <p>Accurate, privacy-first financial tools built for Indian users and global finance learners.</p>
                 </div>
                 <div className="features-grid">
                     <div className="feature-card">
                         <div className="feature-icon" style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
                             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                         </div>
-                        <h3>US Financial Standards</h3>
-                        <p>Our tools are updated with the latest US mortgage standards, 401(k) limits, and inflation data to ensure accuracy for US households.</p>
+                        <h3>Global Financial Standards</h3>
+                        <p>Our tools are updated with widely accepted financial formulas, 401(k) limits, and inflation data to ensure accuracy for students, families, and everyday users who want smarter financial decisions.</p>
                     </div>
                     <div className="feature-card">
                         <div className="feature-icon" style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
@@ -198,21 +198,21 @@ export default function Home() {
                             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></svg>
                         </div>
                         <h3>Mobile Friendly</h3>
-                        <p>Calculated your EMI or SIP on the go. Our platform is optimized for a perfect experience on all mobile devices.</p>
+                        <p>Calculate your EMI or SIP on the go. Our platform is optimized for a perfect experience on all mobile devices.</p>
                     </div>
                 </div>
             </section>
 
             <section className="seo-content">
                 <div className="container">
-                    <h2>Professional Financial Planning for Americans</h2>
-                    <p>FinanceCalc is dedicated to providing Americans with the most precise tools for wealth management, retirement planning, and debt optimization. In an era of rising costs and economic volatility, making decisions based on "gut feeling" is no longer enough. Our platform empowers <strong>US households</strong> with mathematical certainty, whether you're navigating your first mortgage or planning for early retirement.</p>
+                    <h2>Professional Financial Planning for Everyone</h2>
+                    <p>FinanceCalc is dedicated to providing Indian users and global finance learners with the most precise tools for wealth management, retirement planning, and debt optimization. In an era of rising costs and economic volatility, making decisions based on "gut feeling" is no longer enough. Our platform empowers <strong>students, families, and everyday users who want smarter financial decisions</strong> with mathematical certainty, whether you're navigating your first mortgage or planning for early retirement.</p>
 
                     <h3>Why Accurate Financial Calculators Matter</h3>
-                    <p>Even a 0.5% difference in mortgage rates or a minor misunderstanding of 401(k) compounding can result in a loss of thousands over a 20-year period. Our calculators are meticulously audited to reflect US financial standards. We don't just give you a number; we provide a complete roadmap with interactive charts, amortization schedules, and year-by-year wealth breakdowns.</p>
+                    <p>Even a 0.5% difference in mortgage rates or a minor misunderstanding of 401(k) compounding can result in a loss of thoGlobalnds over a 20-year period. Our calculators are Designed using widely accepted financial formulas. We don't just give you a number; we provide a complete roadmap with interactive charts, amortization schedules, and year-by-year wealth breakdowns.</p>
 
                     <h3>Comprehensive Coverage for Every Money Goal</h3>
-                    <p>Whether you're looking for a <strong>Mortgage Calculator with PMI</strong> to see your true monthly cost, or a <strong>FIRE Calculator USA</strong> to plan an early exit from the corporate world, we have you covered. Our suite of tools includes industry-leading projections for:</p>
+                    <p>Whether you're looking for a <strong>Mortgage Calculator</strong> to see your true monthly cost, or a <strong>FIRE Calculator</strong> to plan an early exit from the corporate world, we have you covered. Our suite of tools includes industry-leading projections for:</p>
                     <ul>
                         <li><strong>Retirement Planning:</strong> 401(k), IRA, and FIRE goals.</li>
                         <li><strong>Debt Management:</strong> Debt Snowball vs Avalanche, Credit Card Payoff, and Student Loans.</li>
@@ -221,13 +221,15 @@ export default function Home() {
                     </ul>
 
                     <h3>Privacy-First & Completely Free</h3>
-                    <p>Your financial data is sensitive. Unlike other platforms that harvest your data for marketing, <strong>FinanceCalc is 100% anonymous</strong>. All calculations happen directly in your browser. No data ever leaves your device, ensuring your financial secrets stay yours. We believe that professional-grade financial planning should be accessible to every American, free of charge. Higher transparency is what makes us the preferred choice for US financial tracking.</p>
+                    <p>Your financial data is sensitive. Unlike other platforms that harvest your data for marketing, <strong>FinanceCalc is 100% anonymous</strong>. All calculations happen directly in your browser. No data ever leaves your device, ensuring your financial secrets stay yours. We believe that professional-grade financial planning should be accessible to everyone, free of charge. Higher transparency is what makes us the preferred choice for financial tracking.</p>
 
-                    <h3>Plan for Every Stage of American Life</h3>
+                    <h3>Plan for Every Stage of Life</h3>
                     <p>Whether you're just starting to invest, buying your first home, planning for retirement, or aggressively paying off debt, our calculators provide the detailed projections and insights you need to make informed decisions. Download your results as a PDF to share with your family, financial advisor, or keep for your records.</p>
                 </div>
             </section>
 
+
         </div>
     );
 }
+

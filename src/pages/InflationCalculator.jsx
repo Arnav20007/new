@@ -13,6 +13,7 @@ import AdSlot from '../components/common/AdSlot';
 import ShareButton from '../components/common/ShareButton';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateInflation } from '../utils/calculations';
 import { generatePDF } from '../utils/pdfGenerator';
@@ -121,17 +122,17 @@ export default function InflationCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Inflation Calculator USA – Purchasing Power Tool | FinanceCalc"
-                description="Calculate how inflation erodes your purchasing power in the USA over time. Join millions of Americans tracking their spending power with our accurate CPI-based tool."
+                title="Inflation Calculator Global – Purchasing Power Tool | FinanceCalc"
+                description="Calculate how inflation erodes your purchasing power in the Global over time. Join millions of Global finance learners tracking their spending power with our accurate CPI-based tool."
                 canonical="/inflation-calculator"
                 faqSchema={faqs}
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Inflation Calculator</span></nav>
             <section className="calculator-hero">
-                <h1>Inflation Calculator USA</h1>
+                <h1>Inflation Calculator Global</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — US CPI Data Core.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — US CPI Data Core.
                 </div>
                 <p className="hero-subtitle">Understand how inflation silently erodes your purchasing power and plan your US financial future.</p>
             </section>
@@ -194,8 +195,8 @@ export default function InflationCalculator() {
 
             <InternalLinks currentPath="/inflation-calculator" />
             <section className="seo-content" id="seo">
-                <h2>The Silent Wealth Killer: Understanding Inflation's Impact on Americans</h2>
-                <p>Inflation is often described as a "silent tax." For many <strong>US households</strong>, it is a constant pressure on their daily budget. While it doesn't appear on your pay stub, it is steadily eating away at the value of your dollar. Simply put, inflation is the rate at which the general level of prices for goods and services rises. If you don't account for this in your long-term <strong>credit card debt in the US</strong> management or retirement planning, your future purchasing power could be significantly less than you expect.</p>
+                <h2>The Silent Wealth Killer: Understanding Inflation's Impact on Global finance learners</h2>
+                <p>Inflation is often described as a "silent tax." For many <strong>students, families, and everyday users who want smarter financial decisions</strong>, it is a constant pressure on their daily budget. While it doesn't appear on your pay stub, it is steadily eating away at the value of your dollar. Simply put, inflation is the rate at which the general level of prices for goods and services rises. If you don't account for this in your long-term <strong>credit card debt in the US</strong> management or retirement planning, your future purchasing power could be significantly less than you expect.</p>
 
                 <h3>How Inflation is Measured: CPI and Beyond</h3>
                 <p>Most governments track inflation using a <strong>Consumer Price Index (CPI)</strong>. This index monitors a "basket of goods" — including housing, food, energy, healthcare, and transportation — and tracks how the cost of that basket changes over time. While the official "headline" inflation might be 2% or 3%, your <strong>personal inflation rate</strong> might be much higher depending on your spending habits (for example, if you have high medical costs or spend a lot on gasoline).</p>
@@ -233,6 +234,11 @@ export default function InflationCalculator() {
             <FAQSection faqs={faqs} />
 
             <TryNextCalculator currentPath="/inflation-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+
+

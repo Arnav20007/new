@@ -1,8 +1,8 @@
 /**
- * AdSlot — Reusable ad placement component
+ * AdSlot — ReGlobalble ad placement component
  * Ready for Google AdSense integration
  * 
- * Usage:
+ * Globalge:
  * <AdSlot type="header" />
  * <AdSlot type="mid-content" />
  * <AdSlot type="bottom" />
@@ -17,3 +17,4 @@
 export default function AdSlot() {
     return null;
 }
+

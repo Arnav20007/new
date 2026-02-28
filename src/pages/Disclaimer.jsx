@@ -15,7 +15,7 @@ export default function Disclaimer() {
             </nav>
 
             <h1>Financial Disclaimer</h1>
-            <p className="last-updated">Last Updated: February 11, 2026</p>
+            <p className="last-updated">Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
 
             <div style={{
                 background: 'var(--color-warning-light)',
@@ -101,7 +101,7 @@ export default function Disclaimer() {
 
             <h2>10. Contact</h2>
             <p>If you have any questions about this disclaimer, please contact us at:</p>
-            <p><strong>Email:</strong> legal@financecalc.com</p>
+            <p><strong>Email:</strong> mauryatulofficial@gmail.com</p>
             <p><strong>Website:</strong> <Link to="/">financecalc.com</Link></p>
         </div>
     );

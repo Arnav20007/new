@@ -16,6 +16,7 @@ import { calculateDebtSnowball } from '../utils/calculations';
 import { formatMonthsToYears } from '../utils/formatters';
 import { generatePDF } from '../utils/pdfGenerator';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
@@ -23,7 +24,7 @@ const faqs = [
     { question: 'What is the debt snowball method?', answer: 'The debt snowball method involves listing your debts from smallest to largest balance, making minimum payments on all debts, and putting any extra money toward the smallest debt first. When the smallest debt is paid off, its minimum payment "rolls" into the next smallest debt, creating a snowball effect. This method prioritizes psychological wins to keep you motivated.' },
     { question: 'What is the debt avalanche method?', answer: 'The debt avalanche method (also called debt stacking) focuses on paying off debts with the highest interest rates first, regardless of balance. While this approach saves more money in total interest, it may take longer to see your first debt fully paid off, which can be less motivating for some people.' },
     { question: 'Which is better — snowball or avalanche?', answer: 'Mathematically, the avalanche method always saves more in interest. However, behavioral research shows that the psychological boost from paying off small debts quickly (snowball) helps many people stay committed to their payoff plan. The best method is the one you\'ll stick with. Our calculator shows both so you can compare.' },
-    { question: 'How much extra should I put toward debt?', answer: 'Any extra amount helps, but a common guideline is to use the 50/30/20 budget rule: 50% for needs, 30% for wants, and 20% for savings and debt repayment. If you\'re aggressively paying off debt, you might temporarily shift to 50/20/30 (allocating more to debt). Even an extra $100/month can save thousands in interest.' },
+    { question: 'How much extra should I put toward debt?', answer: 'Any extra amount helps, but a common guideline is to use the 50/30/20 budget rule: 50% for needs, 30% for wants, and 20% for savings and debt repayment. If you\'re aggressively paying off debt, you might temporarily shift to 50/20/30 (allocating more to debt). Even an extra $100/month can save thoGlobalnds in interest.' },
     { question: 'Should I pay off debt or invest?', answer: 'Generally, if your debt interest rate is higher than your expected investment return, prioritize debt payoff. For example, paying off a 20% credit card is equivalent to earning a guaranteed 20% return. However, always contribute enough to get any employer 401(k) match first (it\'s free money). For low-interest debt (under 5%), investing may be more beneficial long-term.' },
     { question: 'Should I have an emergency fund before starting?', answer: 'Yes. Most financial experts recommend saving a "starter" emergency fund of $1,000 to $2,000 before aggressively paying off debt. This ensures that a car repair or medical bill doesn’t force you back into high-interest credit card debt while you are in the middle of your payoff plan.' },
     { question: 'Does debt consolidation help?', answer: 'Debt consolidation — taking out one large loan to pay off multiple smaller ones — can help if the new loan has a significantly lower interest rate and if you stop using the credit cards you just paid off. Without a change in spending habits, consolidation often leads to even more debt.' },
@@ -144,8 +145,8 @@ export default function DebtSnowballCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Debt Snowball Calculator USA – Best Credit Card Payoff Tool | FinanceCalc"
-                description="Use the Debt Snowball Calculator USA to eliminate credit card debt. Join millions of Americans using this method to free US households from the debt trap."
+                title="Debt Snowball Calculator Global – Best Credit Card Payoff Tool | FinanceCalc"
+                description="Use the Debt Snowball Calculator Global to eliminate credit card debt. Join millions of Global finance learners using this method to free students, families, and everyday users who want smarter financial decisions from the debt trap."
                 canonical="/debt-snowball-calculator"
                 faqSchema={faqs}
             />
@@ -158,7 +159,7 @@ export default function DebtSnowballCalculator() {
                 <h1>Debt Snowball Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Break free from debt.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Break free from debt.
                 </div>
                 <p className="hero-subtitle">
                     Find the fastest, most cost-effective way to eliminate your debts. Compare snowball vs. avalanche strategies side by side.
@@ -302,19 +303,19 @@ export default function DebtSnowballCalculator() {
 
             <section className="seo-content" id="seo">
                 <h2>The Comprehensive Guide to Becoming Debt-Free</h2>
-                <p>Living with debt can feel like swimming against a powerful current. For millions of <strong>Americans</strong>, this is a daily reality. However, with a clear strategy and a visual roadmap, you can regain control of your financial future. Our Debt Snowball Calculator is designed to compare the world's most effective debt-payoff strategies, specifically tailored for <strong>US households</strong> looking to find the fastest way out of the debt trap.</p>
+                <p>Living with debt can feel like swimming against a powerful current. For millions of <strong>Global finance learners</strong>, this is a daily reality. However, with a clear strategy and a visual roadmap, you can regain control of your financial future. Our Debt Snowball Calculator is designed to compare the world's most effective debt-payoff strategies, specifically tailored for <strong>students, families, and everyday users who want smarter financial decisions</strong> looking to find the fastest way out of the debt trap.</p>
 
                 <h2>Debt Snowball vs Debt Avalanche — Which is Better?</h2>
                 <p>The two most popular payoff methods optimize for different things: psychology versus mathematics. While the Debt Avalanche (highest interest first) is mathematically superior, the Debt Snowball (smallest balance first) is often favored by behavioral experts because it provides the "quick wins" necessary to stay motivated through the long journey of debt elimination.</p>
 
-                <h2>How Americans Pay Off Debt Faster</h2>
-                <p>Success in paying off debt in the US often comes down to intentionality. Many <strong>US households</strong> are using the rollover effect—where the payment from a cleared debt is immediately applied to the next one—to create a powerful financial momentum. This "snowball" effect is how people are shaving years off their repayment timelines and saving thousands in interest charges.</p>
+                <h2>How Global finance learners Pay Off Debt Faster</h2>
+                <p>Success in paying off debt in the US often comes down to intentionality. Many <strong>students, families, and everyday users who want smarter financial decisions</strong> are using the rollover effect—where the payment from a cleared debt is immediately applied to the next one—to create a powerful financial momentum. This "snowball" effect is how people are shaving years off their repayment timelines and saving thoGlobalnds in interest charges.</p>
 
                 <h2>Best Strategy to Eliminate Credit Card Debt</h2>
                 <p>Managing <strong>credit card debt in the US</strong> requires a multi-pronged approach. First, stop adding to your balances. Second, choose a method—Snowball or Avalanche—that fits your personality. Third, automate your payments. By using this calculator, you can see exactly how each strategy impacts your bottom line, helping you pick the best path for your unique situation.</p>
 
                 <h2>Average US Credit Card Debt Statistics</h2>
-                <p>In the United States, debt is a significant burden for many. Recent data shows that <strong>US households carry an average of $6,000 credit card debt</strong>. This debt often comes with high interest rates, making it difficult for Americans to build wealth. <strong>Americans use this method</strong> (the debt snowball) specifically because it addresses the psychological aspect of debt, providing the momentum needed to clear balances for good.</p>
+                <p>In the United States, debt is a significant burden for many. Recent data shows that <strong>students, families, and everyday users who want smarter financial decisions carry an average of $6,000 credit card debt</strong>. This debt often comes with high interest rates, making it difficult  to build wealth. <strong>Global finance learners use this method</strong> (the debt snowball) specifically because it addresses the psychological aspect of debt, providing the momentum needed to clear balances for good.</p>
 
                 <h3>Understanding the "Minimum Payment Trap"</h3>
                 <p>Banks and credit card companies design minimum payments to keep you in debt for as long as possible. Typically, a minimum payment is calculated as only 1% to 2% of your total balance plus any interest accrued that month. This means that if you only pay the minimum, you are barely touching the principal balance. On a $10,000 credit card with a 20% interest rate, making only minimum payments could take over 20 years to pay off and cost you more in interest than the original $10,000 you spent. Our calculator highlights the "Minimum Only" baseline to show you just how much time and money you save by adding even a small amount extra each month.</p>
@@ -327,7 +328,7 @@ export default function DebtSnowballCalculator() {
                 </ul>
 
                 <h3>How Extra Payments Create a Compounding "Snowball"</h3>
-                <p>The magic of these methods isn't just the order — it's the <strong>rollover effect</strong>. When Debt #1 is paid off, its monthly payment doesn't go back into your pocket; it gets "rolled over" and added to the payment for Debt #2. As you pay off more debts, your monthly "power payment" grows larger and larger, exactly like a snowball rolling down a hill. By the time you reach your final, largest debt (like a student loan or a mortgage), you might be throwing thousands of dollars a month at it, crushing it in record time.</p>
+                <p>The magic of these methods isn't just the order — it's the <strong>rollover effect</strong>. When Debt #1 is paid off, its monthly payment doesn't go back into your pocket; it gets "rolled over" and added to the payment for Debt #2. As you pay off more debts, your monthly "power payment" grows larger and larger, exactly like a snowball rolling down a hill. By the time you reach your final, largest debt (like a student loan or a mortgage), you might be throwing thoGlobalnds of dollars a month at it, crushing it in record time.</p>
 
                 <h3>The Impact of Debt on Your Credit Score</h3>
                 <p>Your "Debt-to-Income" (DTI) ratio and "Credit Utilization" are the two biggest factors in your credit score. As you use our calculator to pay down balances, you'll likely see your credit score increase. Carrying high credit card balances (over 30% utilization) signals to lenders that you may be overextended. Paying these down not only saves you interest but also unlocks lower interest rates for future needs like home buying or business loans.</p>
@@ -351,6 +352,11 @@ export default function DebtSnowballCalculator() {
             <FAQSection faqs={faqs} />
 
             <TryNextCalculator currentPath="/debt-snowball-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+
+

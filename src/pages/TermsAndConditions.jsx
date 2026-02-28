@@ -15,7 +15,7 @@ export default function TermsAndConditions() {
             </nav>
 
             <h1>Terms and Conditions</h1>
-            <p className="last-updated">Last Updated: February 2026</p>
+            <p className="last-updated">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
 
             <p>
                 Please read these Terms and Conditions ("Terms") carefully before using the FinanceCalc
@@ -113,8 +113,9 @@ export default function TermsAndConditions() {
 
             <h2>15. Contact Us</h2>
             <p>If you have any questions about these Terms, please contact us at:</p>
-            <p><strong>Email:</strong> legal@financecalc.com</p>
+            <p><strong>Email:</strong> mauryatulofficial@gmail.com</p>
             <p><strong>Website:</strong> <Link to="/">financecalc.com</Link></p>
         </div>
     );
 }
+

@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
             </nav>
 
             <h1>Privacy Policy</h1>
-            <p className="last-updated">Last Updated: February 2026</p>
+            <p className="last-updated">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
 
             <p>
                 FinanceCalc ("we," "our," or "us") operates the financecalc.com website (the "Service").
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
             <p>We use the collected information for the following purposes:</p>
             <ul>
                 <li>To provide and maintain our Service</li>
-                <li>To analyze usage patterns and improve our website</li>
+                <li>To analyze Globalge patterns and improve our website</li>
                 <li>To monitor for technical issues and security threats</li>
                 <li>To comply with legal obligations</li>
             </ul>
@@ -99,8 +99,10 @@ export default function PrivacyPolicy() {
 
             <h2>10. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Email:</strong> privacy@financecalc.com</p>
+            <p><strong>Email:</strong> mauryatulofficial@gmail.com</p>
             <p><strong>Website:</strong> <Link to="/">financecalc.com</Link></p>
         </div>
     );
 }
+
+

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
 const calculatorLinks = [
-    { path: '/mortgage-calculator', label: 'Mortgage Calculator USA' },
+    { path: '/mortgage-calculator', label: 'Mortgage Calculator Global' },
     { path: '/401k-calculator', label: '401(k) Calculator' },
     { path: '/retirement-calculator', label: 'Retirement & Roth IRA' },
     { path: '/compound-interest-calculator', label: 'Compound Interest' },
     { path: '/loan-payoff-calculator', label: 'Loan Payoff' },
-    { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff USA' },
+    { path: '/credit-card-payoff-calculator', label: 'Credit Card Payoff Global' },
     { path: '/sip-calculator', label: 'SIP Calculator' },
     { path: '/emi-calculator', label: 'EMI Calculator' },
 ];
@@ -30,3 +30,4 @@ export default function InternalLinks({ currentPath }) {
         </div>
     );
 }
+

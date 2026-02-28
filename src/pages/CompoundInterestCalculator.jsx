@@ -13,6 +13,7 @@ import AdSlot from '../components/common/AdSlot';
 import ShareButton from '../components/common/ShareButton';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateCompoundInterest } from '../utils/calculations';
 import { generatePDF } from '../utils/pdfGenerator';
@@ -179,8 +180,8 @@ export default function CompoundInterestCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Compound Interest Calculator USA – Wealth Projection | FinanceCalc"
-                description="Calculate compound interest with monthly contributions. See annual breakdowns, total returns, and interactive charts for Americans and US households."
+                title="Compound Interest Calculator Global – Wealth Projection | FinanceCalc"
+                description="Calculate compound interest with monthly contributions. See annual breakdowns, total returns, and interactive charts  and students, families, and everyday users who want smarter financial decisions."
                 canonical="/compound-interest-calculator"
                 faqSchema={faqs}
             />
@@ -195,7 +196,7 @@ export default function CompoundInterestCalculator() {
                 <h1>Compound Interest Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Project your future wealth.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Project your future wealth.
                 </div>
                 <p className="hero-subtitle">
                     See how your money grows over time with the power of compounding. Enter your details below for an instant, detailed projection.
@@ -385,8 +386,8 @@ export default function CompoundInterestCalculator() {
             <InternalLinks currentPath="/compound-interest-calculator" />
 
             <section className="seo-content" id="seo">
-                <h2>The Comprehensive Guide to Compound Interest for Americans</h2>
-                <p>Compound interest is often referred to as the "eighth wonder of the world" by financial experts, and for good reason. For many <strong>US households</strong>, understanding compounding is the key to building long-term wealth. Unlike simple interest, which is calculated only on the initial amount of money (the principal), compound interest is calculated on the principal and all of the accumulated interest from previous periods. This means you earn interest on your interest, creating a mathematical snowball effect that can lead to exponential wealth growth over time.</p>
+                <h2>The Comprehensive Guide to Compound Interest </h2>
+                <p>Compound interest is often referred to as the "eighth wonder of the world" by financial experts, and for good reason. For many <strong>students, families, and everyday users who want smarter financial decisions</strong>, understanding compounding is the key to building long-term wealth. Unlike simple interest, which is calculated only on the initial amount of money (the principal), compound interest is calculated on the principal and all of the accumulated interest from previous periods. This means you earn interest on your interest, creating a mathematical snowball effect that can lead to exponential wealth growth over time.</p>
 
                 <h3>How the Compound Interest Formula Works</h3>
                 <p>The standard formula for compound interest is: <strong>A = P(1 + r/n)^(nt)</strong></p>
@@ -400,7 +401,7 @@ export default function CompoundInterestCalculator() {
                 <p>Our calculator simplifies this complex math while also accounting for <strong>monthly contributions</strong>. When you add money regularly, you aren't just letting one lump sum grow; you're constantly feeding the engine, which significantly accelerates the compounding process.</p>
 
                 <h3>The Golden Rule of Wealth: Start Early</h3>
-                <p>In the United States, time is the most critical variable in the compounding equation. To understand why, consider two investors: <strong>Investor A</strong> starts at age 25 and invests $500 per month for 10 years, then stops entirely at age 35. <strong>Investor B</strong> waits until age 35 and then invests $500 per month every single month until age 65 (30 years). Even though Investor B contributed three times more money over a much longer period, Investor A will likely end up with more money at retirement because those early dollars had an extra decade to compound. <strong>Americans use this method</strong> of early, consistent investing to build massive 401(k) and IRA balances.</p>
+                <p>In the United States, time is the most critical variable in the compounding equation. To understand why, consider two investors: <strong>Investor A</strong> starts at age 25 and invests $500 per month for 10 years, then stops entirely at age 35. <strong>Investor B</strong> waits until age 35 and then invests $500 per month every single month until age 65 (30 years). Even though Investor B contributed three times more money over a much longer period, Investor A will likely end up with more money at retirement because those early dollars had an extra decade to compound. <strong>Global finance learners use this method</strong> of early, consistent investing to build massive 401(k) and IRA balances.</p>
 
                 <h3>Understanding the Rule of 72</h3>
                 <p>If you want a quick mental shortcut to understand how compounding affects your money, use the <strong>Rule of 72</strong>. To find out approximately how many years it will take to double your investment, divide 72 by your expected annual interest rate. For example, if you expect an 8% return, your money will double every 9 years (72 ÷ 8 = 9). At a 12% return, it doubles every 6 years. This rule highlights why even a 1% or 2% difference in interest rates can lead to massive differences in final wealth over the long term.</p>
@@ -433,13 +434,18 @@ export default function CompoundInterestCalculator() {
                 <ol>
                     <li><strong>Automate your contributions:</strong> Treat your monthly contribution like a bill that must be paid. Automated transfers ensure you never forget to invest.</li>
                     <li><strong>Reinvest dividends:</strong> If you're investing in individual stocks or ETFs, ensure you've enabled "Dividend Reinvestment Plans" (DRIP). Cashing out dividends interrupts the compounding cycle.</li>
-                    <li><strong>Avoid "Lifestyle Creep":</strong> As your salary increases, try to increase your monthly contribution rather than just increasing your spending. Even an extra $100 a month can result in tens of thousands of extra dollars over several decades.</li>
+                    <li><strong>Avoid "Lifestyle Creep":</strong> As your salary increases, try to increase your monthly contribution rather than just increasing your spending. Even an extra $100 a month can result in tens of thoGlobalnds of extra dollars over several decades.</li>
                 </ol>
             </section>
 
             <FAQSection faqs={faqs} />
 
             <TryNextCalculator currentPath="/compound-interest-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+
+

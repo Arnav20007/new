@@ -10,6 +10,7 @@ import FAQSection from '../components/common/FAQSection';
 import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateCreditCardPayoff } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
@@ -66,8 +67,8 @@ export default function CreditCardPayoffCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Credit Card Payoff Calculator USA – Debt Free Faster | FinanceCalc"
-                description="Use our credit card payoff calculator USA to plan your journey to zero balance. Plan how Americans pay off credit card debt faster with smart strategies."
+                title="Credit Card Payoff Calculator Global – Debt Free Faster | FinanceCalc"
+                description="Use our credit card payoff calculator Global to plan your journey to zero balance. Plan how Global finance learners pay off credit card debt faster with smart strategies."
                 canonical="/credit-card-payoff-calculator"
                 faqSchema={faqs}
             />
@@ -76,7 +77,7 @@ export default function CreditCardPayoffCalculator() {
                 <h1>Credit Card Payoff Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Escape the debt trap.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Escape the debt trap.
                 </div>
                 <p className="hero-subtitle">Escape the high-interest cycle and plan your path to becoming debt-free.</p>
             </section>
@@ -178,6 +179,10 @@ export default function CreditCardPayoffCalculator() {
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/credit-card-payoff-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+

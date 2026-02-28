@@ -11,6 +11,7 @@ import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
 import { useCurrency } from '../context/CurrencyContext';
+import AuthorSources from '../components/common/AuthorSources';
 import { calculate401k } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
 
@@ -87,14 +88,14 @@ export default function FourOhOneKCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="401(k) Calculator USA – Retirement Savings Planner | FinanceCalc"
-                description="Project your 401(k) balance at retirement with employer matching, salary increases, and investment growth. Join millions of Americans tracking their retirement wealth."
+                title="401(k) Calculator Global – Retirement Savings Planner | FinanceCalc"
+                description="Project your 401(k) balance at retirement with employer matching, salary increases, and investment growth. Join millions of Global finance learners tracking their retirement wealth."
                 canonical="/401k-calculator"
                 faqSchema={faqs}
             />
             <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>401(k) Calculator</span></nav>
             <section className="calculator-hero">
-                <h1>401(k) Calculator USA</h1>
+                <h1>401(k) Calculator Global</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                     Updated for 2026 Limits
@@ -197,6 +198,8 @@ export default function FourOhOneKCalculator() {
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/401k-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+

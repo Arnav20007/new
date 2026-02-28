@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/common/SEOHead';
 import TryNextCalculator from '../../components/common/TryNextCalculator';
+import AuthorSources from '../../components/common/AuthorSources';
 
 export default function SIPvsFDGuide() {
     return (
@@ -69,6 +70,7 @@ export default function SIPvsFDGuide() {
             </article>
 
             <TryNextCalculator currentPath="/guides/sip-vs-fd-which-is-better" />
+            <AuthorSources />
         </div>
     );
 }

@@ -13,6 +13,7 @@ import AdSlot from '../components/common/AdSlot';
 import ShareButton from '../components/common/ShareButton';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
+import AuthorSources from '../components/common/AuthorSources';
 import { useCurrency } from '../context/CurrencyContext';
 import { calculateLoanPayoff } from '../utils/calculations';
 import { formatMonthsToYears } from '../utils/formatters';
@@ -24,7 +25,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcEleme
 const faqs = [
     { question: 'What is an amortization schedule?', answer: 'An amortization schedule is a complete table of periodic loan payments showing the amount of principal and interest that comprise each payment until the loan is paid off at the end of its term.' },
     { question: 'How is loan interest calculated?', answer: 'Most loans use simple interest on the remaining balance. Each month, the interest charge equals the outstanding balance multiplied by the monthly interest rate (annual rate ÷ 12).' },
-    { question: 'Should I make extra payments on my loan?', answer: 'Making extra payments can significantly reduce the total interest paid and the loan duration. Even small additional amounts applied to principal each month can save thousands over the life of a loan.' },
+    { question: 'Should I make extra payments on my loan?', answer: 'Making extra payments can significantly reduce the total interest paid and the loan duration. Even small additional amounts applied to principal each month can save thoGlobalnds over the life of a loan.' },
     { question: 'What is the difference between APR and interest rate?', answer: 'The interest rate is the cost of borrowing the principal amount. The APR includes the interest rate plus other costs like origination fees, closing costs, and insurance.' },
     { question: 'How do I calculate my minimum monthly payment?', answer: 'For a standard amortizing loan, the minimum payment is calculated using the formula: M = P[r(1+r)^n]/[(1+r)^n-1], where P is the principal, r is the monthly interest rate, and n is the number of payments.' },
     { question: 'What are prepayment penalties?', answer: 'A prepayment penalty is a fee charged by some lenders if you pay off all or part of your loan significantly earlier than the agreed-upon term. Most modern mortgages and auto loans do not have these, but you should always check your loan agreement before making large extra payments.' },
@@ -151,7 +152,7 @@ export default function LoanPayoffCalculator() {
                 <h1>Loan Payoff Calculator</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Optimize your debt payoff.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Optimize your debt payoff.
                 </div>
                 <p className="hero-subtitle">See your complete amortization schedule, total interest costs, and payoff timeline for any fixed-rate loan.</p>
             </section>
@@ -247,7 +248,7 @@ export default function LoanPayoffCalculator() {
             <InternalLinks currentPath="/loan-payoff-calculator" />
             <section className="seo-content" id="seo">
                 <h2>The Ultimate Guide to Mastering Loan Payoff & Amortization</h2>
-                <p>Taking out a loan is a major financial commitment, whether it's for a home, a car, or personal expenses. Understanding exactly how your loan works — and how you can pay it off faster — is one of the most effective ways to save tens of thousands of dollars over your lifetime. Our Loan Payoff Calculator is designed to give you complete transparency into your debt, showing you exactly where every cent of your hard-earned money goes.</p>
+                <p>Taking out a loan is a major financial commitment, whether it's for a home, a car, or personal expenses. Understanding exactly how your loan works — and how you can pay it off faster — is one of the most effective ways to save tens of thoGlobalnds of dollars over your lifetime. Our Loan Payoff Calculator is designed to give you complete transparency into your debt, showing you exactly where every cent of your hard-earned money goes.</p>
 
                 <h3>What is Loan Amortization and Why Does It Matter?</h3>
                 <p>Amortization is the process of spreading out a loan into a series of fixed payments. While your total monthly payment typically stays the same for a fixed-rate loan, the <strong>inner composition</strong> of that payment changes every month. In the early years of a 30-year mortgage or a 5-year auto loan, the vast majority of your payment goes toward <strong>interest</strong>, with only a small sliver reducing your actual <strong>principal balance</strong>. As the balance decreases, the interest calculated on that balance also decreases, allowing more of your payment to go toward principal in the later years.</p>
@@ -285,6 +286,10 @@ export default function LoanPayoffCalculator() {
             <FAQSection faqs={faqs} />
 
             <TryNextCalculator currentPath="/loan-payoff-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+

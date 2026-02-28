@@ -36,15 +36,19 @@ export default function Footer() {
                         <Link to="/hra-calculator#seo">HRA Tax Saving Guide</Link>
                         <Link to="/fire-calculator#seo">FIRE Strategy Guide</Link>
                     </div>
-                    <div className="footer-col" id="footer-legal">
-                        <h4>Legal & Trust</h4>
+                    <div className="footer-col" id="footer-contact-legal">
+                        <h4>Contact & Legal</h4>
+                        <a href="mailto:mauryatulofficial@gmail.com" className="footer-contact-link">mauryatulofficial@gmail.com</a>
+                        <p style={{ marginTop: '0.25rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>+91 7080091179</p>
+                        <hr style={{ border: '0', borderTop: '1px solid var(--border-primary)', margin: '1rem 0' }} />
+                        <Link to="/contact">Contact Us</Link>
                         <Link to="/privacy-policy">Privacy Policy</Link>
                         <Link to="/terms-and-conditions">Terms of Service</Link>
-                        <Link to="/disclaimer">Earnings Disclaimer</Link>
+                        <Link to="/disclaimer">Disclaimer</Link>
                     </div>
                 </div>
                 <div className="footer-disclaimer">
-                    <strong>Disclaimer:</strong> FinanceCalc provides calculators for educational and informational purposes only. Results are estimates based on the information you provide and are not financial advice. Always consult with qualified financial professionals before making important financial decisions.
+                    <strong>Disclaimer:</strong> FinanceCalc provides calculators for educational and informational purposes only. Results are estimates and not financial advice. Always consult a qualified financial professional before making financial decisions.
                 </div>
                 <div className="footer-bottom">
                     <span>© {year} FinanceCalc. All rights reserved.</span>

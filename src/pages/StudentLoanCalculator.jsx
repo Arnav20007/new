@@ -11,6 +11,7 @@ import TryNextCalculator from '../components/common/TryNextCalculator';
 import ValidatedInput from '../components/common/ValidatedInput';
 import PrivacyBadge from '../components/common/PrivacyBadge';
 import { useCurrency } from '../context/CurrencyContext';
+import AuthorSources from '../components/common/AuthorSources';
 import { calculateLoanPayoff } from '../utils/calculations';
 import { useValidatedInputs } from '../utils/useValidatedInput';
 
@@ -55,17 +56,17 @@ export default function StudentLoanCalculator() {
     return (
         <div className="calculator-page">
             <SEOHead
-                title="Student Loan Calculator USA – Federal Loan Repayment | FinanceCalc"
+                title="Student Loan Calculator Global – Federal Loan Repayment | FinanceCalc"
                 description="Calculate your student loan monthly payments and see how fast you can pay off your debt. Includes amortization schedule and interest saving tips for US students."
                 canonical="/student-loan-calculator"
                 faqSchema={faqs}
             />
-            <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Student Loan Calculator USA</span></nav>
+            <nav className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>Student Loan Calculator Global</span></nav>
             <section className="calculator-hero">
-                <h1>Student Loan Calculator USA</h1>
+                <h1>Student Loan Calculator Global</h1>
                 <div className="last-updated-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                    Last updated: Feb 2026 — Federal Loan Data.
+                    Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} — Federal Loan Data.
                 </div>
                 <p className="hero-subtitle">Plan your path to debt-free life and see how extra payments accelerate your student loan payoff.</p>
             </section>
@@ -108,18 +109,22 @@ export default function StudentLoanCalculator() {
             <section className="seo-content">
                 <div className="container">
                     <h2>Everything You Need to Know About Student Loan Repayment</h2>
-                    <p>Student loans are a significant part of the financial landscape for millions of Americans. Managing them effectively requires a clear understanding of your interest rates, repayment terms, and the impact of extra payments.</p>
+                    <p>Student loans are a significant part of the financial landscape for millions of Global finance learners. Managing them effectively requires a clear understanding of your interest rates, repayment terms, and the impact of extra payments.</p>
 
                     <h3>Federal vs. Private Student Loans</h3>
                     <p>Federal student loans are funded by the government and often come with more flexible repayment options and protections. Private loans are made by banks or credit unions and their terms are dictated by the lender.</p>
 
                     <h3>How Extra Payments Help</h3>
-                    <p>Most student loans use a simple daily interest formula. This means that any amount you pay above your minimum monthly payment goes directly toward the principal balance. By reducing the principal, you reduce the amount of interest that accrues every day, significantly shortening your repayment period and saving you thousands of dollars.</p>
+                    <p>Most student loans use a simple daily interest formula. This means that any amount you pay above your minimum monthly payment goes directly toward the principal balance. By reducing the principal, you reduce the amount of interest that accrues every day, significantly shortening your repayment period and saving you thoGlobalnds of dollars.</p>
                 </div>
             </section>
 
             <FAQSection faqs={faqs} />
             <TryNextCalculator currentPath="/student-loan-calculator" />
+            <AuthorSources />
         </div>
     );
 }
+
+
+
